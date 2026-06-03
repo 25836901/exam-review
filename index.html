@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>公共营养师三级 · 全真实题库（318题）</title>
+    <title>公共营养师三级 · 全题库（318题）</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #eef5ff; font-family: 'Segoe UI', Roboto, sans-serif; padding: 1rem; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
@@ -61,10 +61,9 @@
 </div>
 
 <script>
-// ======================== 1. 技能考核（18题） ========================
-const SKILL = [  
-    { text:"张先生，男，35岁，干部。身高180cm，体重76公斤。请计算张先生的标准体重是（ ）。", options:["75","78","80","85"], answer:"A" },
-    { text:"请计算张先生的标准体重指数是（ ）。", options:["4","1.3","20","15"], answer:"B" },
+// ======================== 技能考核（18题） ========================
+const SKILL = [
+    { text:"张先生，男，35岁，干部。身高180cm，体重76公斤。请计算张先生的标准体重是（ ）。", options:["75","78","80","85"], answer:"A" },   { text:"请计算张先生的标准体重指数是（ ）。", options:["4","1.3","20","15"], answer:"B" },
     { text:"请计算张先生一日所需的热量（ ）。", options:["2010kcal","2625kcal","2400kcal","2000kcal"], answer:"B" },
     { text:"请计算张先生体质指数（ ）。", options:["23.5","19.4","27.04","28.2"], answer:"A" },
     { text:"如婴幼儿哭闹无法进行体重测量时可采用（ ）。", options:["减差法","扣除衣物法","直接称重法","间接测量法"], answer:"A" },
@@ -83,8 +82,8 @@ const SKILL = [
     { text:"记账法膳食调查主要适用于（ ）。", options:["个人精确调查","集体伙食单位","孕妇个体","分子营养学研究"], answer:"B" }
 ];
 
-// ======================== 2. 理论·单选题（120题，来自【理论】三级公共营养师题库1-120题） ========================
-const SINGLE_PART1 = [
+// ======================== 理论·单选题（180题） ========================
+const SINGLE = [
     { text:"在市场经济条件下，职业道德具有（ ）的社会功能", options:["鼓励自由选择职业","遏制牟利最大化","促进人们的行为规范化","克服利益驱动"], answer:"C" },
     { text:"下列选项中，关于职业道德与人的事业成功的关系的正确论述是（ ）。", options:["职业道德是事业成功的重要条件","职业道德水平高的人肯定能够取得事业的成功","缺乏职业道德的人也会获得事业的成功","人的事业成功与否与职业道德无关"], answer:"A" },
     { text:"在商业活动中，不符合待人热情要求的是（ ）", options:["严肃待客，不卑不亢","主动服务，细致周到","微笑大方，不厌其烦","亲切友好，宾至如归"], answer:"A" },
@@ -114,8 +113,8 @@ const SINGLE_PART1 = [
     { text:"关于给肉料裹上浆、粉烹调的原理不正确的是（ ）。", options:["大大增加B族维生素","减少营养素与空气接触被氧化","使原料不直接与高温油接触","原料外形美观"], answer:"A" },
     { text:"蔬菜和水果的主要卫生问题包括微生物和寄生虫卵污染，工业废水和生活污水污染，腐败变质和亚硝酸盐以及（ ）。", options:["核辐射污染","农药残留","黄曲霉素污染","抗菌素污染"], answer:"B" },
     { text:"最常见食品生物性污染是（ ）", options:["病毒性污染","细菌和细菌毒素性污染","真菌性污染","真菌毒素污染"], answer:"B" },
-    { text:"发生食物中毒后，公共营养师要采取的行动包括：（ ）", options:["赶快处理现场，清理和销毁各种物证","及时向当地卫生部门报告","隐藏中毒病人","隐瞒不报"], answer:"B" },
-    { text:"《中国食物与营养发展纲要》提出2001～2010年优先解决三个重点人群指（ ）。", options:["少年儿童","妇幼","老年人群体","以上选项均正确"], answer:"D" },{ text:"我国第一部《食品卫生法》开始于（ ）", options:["1990年","1995年","2000年","2005年"], answer:"B" },
+    { text:"发生食物中毒后，公共营养师要采取的行动包括：（ ）", options:["赶快处理现场，清理和销毁各种物证","及时向当地卫生部门报告","隐藏中毒病人","隐瞒不报"], answer:"B" }, { text:"《中国食物与营养发展纲要》提出2001～2010年优先解决三个重点人群指（ ）。", options:["少年儿童","妇幼","老年人群体","以上选项均正确"], answer:"D" },
+    { text:"我国第一部《食品卫生法》开始于（ ）", options:["1990年","1995年","2000年","2005年"], answer:"B" },
     { text:"关于人体缺乏营养的原因不包括（ ）", options:["可能是食物供给过量造成","可能是食品搭配不均衡造成","可能是营养素吸收利用障碍","可能是营养素丢失增加造成"], answer:"A" },
     { text:"广东省居民存在的膳食问题是（ ）", options:["营养不良是主要问题","基本解决学龄前儿童低体重问题","食糖消费量偏高","食盐消费量偏高"], answer:"D" },
     { text:"减肥训练者宜采用中低运动强度、持续时间（ ）的有氧运动。", options:["较短","较长","中等","很短"], answer:"B" },
@@ -155,8 +154,8 @@ const SINGLE_PART1 = [
     { text:"测量者位于婴幼儿右侧测量身长，两手操作的正确方法是（ ）。", options:["左手固定小儿头部，右手滑动滑板紧贴小儿足跟","左手固定小儿腰部，右手滑动滑板","左手固定小儿髋部","左手固定小儿膝部"], answer:"A" },
     { text:"胸围值的定义是指（ ）", options:["在受试者呼气尚未开始时读取数值","在受试者吸气尚未开始时读取数值","在受试者吸气刚开始时读取数值","在受试者呼气刚开始时读取数值"], answer:"A" },
     { text:"测量上臂松弛围时，被测者的肌肉（ ）", options:["由紧张变换到放松时勿移动卷尺","由紧张变换到放松前先取走卷尺","由紧张变换到放松前先移开卷尺","以上选项均错误"], answer:"A" },
-    { text:"使用身高坐高计测试前应校正（ ）", options:["坐高计划度","坐高计零点","坐高计标尺","坐高计高度"], answer:"B" },
-    { text:"测量成人身高时，“两点呈水平”的正确姿势是（ ）", options:["耳屏下缘与眼眶上缘水平","耳屏上缘与眼眶上缘水平","耳屏上缘与眼眶下缘水平","耳屏下缘与眼眶下缘水平"], answer:"B" },{ text:"蛋白质和（或）能量供给不能满足机体需要可发生（ ）。", options:["蛋白质-能量营养不良症","蛋白质营养不良症","能量营养不良症","以上均错误"], answer:"A" },
+    { text:"使用身高坐高计测试前应校正（ ）", options:["坐高计划度","坐高计零点","坐高计标尺","坐高计高度"], answer:"B" },   { text:"测量成人身高时，“两点呈水平”的正确姿势是（ ）", options:["耳屏下缘与眼眶上缘水平","耳屏上缘与眼眶上缘水平","耳屏上缘与眼眶下缘水平","耳屏下缘与眼眶下缘水平"], answer:"B" },
+    { text:"蛋白质和（或）能量供给不能满足机体需要可发生（ ）。", options:["蛋白质-能量营养不良症","蛋白质营养不良症","能量营养不良症","以上均错误"], answer:"A" },
     { text:"体格大小和生长速度是评价（ ）的灵敏指标。", options:["经济状况","营养状况","遗传状况","照顾状况"], answer:"B" },
     { text:"消瘦型营养不良多表现为（ ）", options:["以蛋白不足为主，皮下脂肪和骨骼肌消耗","以能量不足为主，皮下脂肪和骨骼肌消耗","两者均正确","两者均错误"], answer:"B" },
     { text:"“匙状甲”往往见于（ ）的患者。", options:["严重缺铁性贫血","严重缺锌","两者均正确","两者均错误"], answer:"A" },
@@ -202,9 +201,7 @@ const SINGLE_PART1 = [
     { text:"在相对湿度90%以上时，主要适合（ ）繁殖。", options:["湿生性霉菌","中生性霉菌","干生性霉菌","各种霉菌"], answer:"A" },
     { text:"霉菌的产毒和繁殖的最适温度为（ ）", options:["20-24℃","25-30℃","30-35℃","35-40℃"], answer:"B" },
     { text:"食品腐败变质的鉴定一般采用感官、物理、化学和（ ）四个方面的指标。", options:["微生物","生物","放射性","毒性"], answer:"A" },
-    { text:"鱼类腐败可用K值表示，K≤20%表明鱼体新鲜，K值大于（ ）表示鱼体开始腐败。", options:["30%","40%","50%","60%"], answer:"B" }
-    // ======================== 理论·单选题（第121-180题，来自【理论知识】题库60题） ========================
-const SINGLE_PART2 = [
+    { text:"鱼类腐败可用K值表示，K≤20%表明鱼体新鲜，K值大于（ ）表示鱼体开始腐败。", options:["30%","40%","50%","60%"], answer:"B" },
     { text:"下列哪种维生素缺乏可引起癞皮病？", options:["维生素B1","维生素B2","烟酸","维生素B6"], answer:"C" },
     { text:"下列哪种矿物质与甲状腺激素合成有关？", options:["铁","锌","碘","硒"], answer:"C" },
     { text:"膳食中促进非血红素铁吸收的因素是？", options:["植酸","单宁","维生素C","钙"], answer:"C" },
@@ -226,8 +223,7 @@ const SINGLE_PART2 = [
     { text:"维生素K的主要功能是？", options:["促进凝血","抗氧化","促进钙吸收","维持视力"], answer:"A" },
     { text:"下列哪种食物是维生素E的最好来源？", options:["植物油","动物肝脏","奶类","水果"], answer:"A" },
     { text:"下列哪种维生素缺乏可引起口角炎？", options:["维生素B1","维生素B2","维生素B6","维生素B12"], answer:"B" },
-    { text:"下列哪种矿物质是抗氧化酶的组成成分？", options:["铁","锌","硒","铜"], answer:"C" },
-    { text:"维生素A的缺乏不会导致？", options:["夜盲症","干眼病","佝偻病","角膜软化"], answer:"C" },
+    { text:"下列哪种矿物质是抗氧化酶的组成成分？", options:["铁","锌","硒","铜"], answer:"C" },  { text:"维生素A的缺乏不会导致？", options:["夜盲症","干眼病","佝偻病","角膜软化"], answer:"C" },
     { text:"下列哪种食物含维生素C最丰富？", options:["苹果","西瓜","柑橘","香蕉"], answer:"C" },
     { text:"下列哪种矿物质缺乏会引起味觉减退？", options:["铁","锌","铜","锰"], answer:"B" },
     { text:"维生素B6缺乏可导致？", options:["脂溢性皮炎","癞皮病","坏血病","巨幼细胞贫血"], answer:"A" },
@@ -259,17 +255,15 @@ const SINGLE_PART2 = [
     { text:"下列哪种食物含硒丰富？", options:["巴西坚果","鸡蛋","大蒜","海产品"], answer:"A" },
     { text:"下列哪种矿物质缺乏可引起甲状腺肿大？", options:["碘","铁","锌","硒"], answer:"A" },
     { text:"下列哪种维生素是眼睛视网膜感光细胞所需的？", options:["维生素A","维生素B2","维生素C","维生素E"], answer:"A" },
-]; { text:"下列哪种食物含维生素B12丰富？", options:["动物肝脏","肉类","蛋类","以上都是"], answer:"D" },
+    { text:"下列哪种食物含维生素B12丰富？", options:["动物肝脏","肉类","蛋类","以上都是"], answer:"D" },
     { text:"下列哪种矿物质缺乏可引起肌肉痉挛？", options:["钙","镁","钠","钾"], answer:"A" },
     { text:"下列哪种维生素缺乏可引起唇炎和舌炎？", options:["维生素B2","维生素B6","烟酸","以上都是"], answer:"D" },
     { text:"下列哪种食物含维生素C最丰富？", options:["鲜枣","猕猴桃","草莓","橙子"], answer:"A" },
     { text:"下列哪种矿物质是核酸合成的必需成分？", options:["镁","锌","锰","铜"], answer:"B" },
     { text:"下列哪种维生素是维持神经系统功能所必需的？", options:["维生素B1","维生素B6","维生素B12","以上都是"], answer:"D" }
 ];
-// 合并所有单选题
-const SINGLE = SINGLE_PART1.concat(SINGLE_PART2);
 
-// ======================== 3. 理论·多选题（80题，来自两个PDF） ========================
+// ======================== 理论·多选题（80题） ========================
 const MULTI = [
     { text:"人体的条件必需氨基酸有（ ）。", options:["赖氨酸","酪氨酸","半胱氨酸","亮氨酸"], answer:"BC" },
     { text:"影响铁吸收的体内因素有（ ）。", options:["铁需要量","铁储存量","食物通过肠道的时间","胃酸"], answer:"ABCD" },
@@ -313,8 +307,8 @@ const MULTI = [
     { text:"在某些菜肴的烹饪中加醋，可起到（ ）的作用。", options:["保护维生素","防止蛋白质变性","促进钙吸收","防止脂肪氧化"], answer:"AC" },
     { text:"影响人体基础代谢的因素包括（ ）。", options:["年龄","性别","体型","内分泌"], answer:"ABCD" },
     { text:"膳食纤维的生理功能包括（ ）。", options:["通便","降血糖","降血脂","抗肿瘤"], answer:"ABCD" },
-    { text:"维生素C的生理功能包括（ ）。", options:["抗氧化","促进铁吸收","促进胶原合成","解毒"], answer:"ABCD" }, { text:"钙的生理功能包括（ ）。", options:["构成骨骼和牙齿","维持神经肌肉兴奋","参与血液凝固","调节酶活性"], answer:"ABCD" },
-    { text:"铁的生理功能包括（ ）。", options:["参与血红蛋白合成","参与肌红蛋白合成","参与能量代谢","参与免疫功能"], answer:"ABCD" },
+    { text:"维生素C的生理功能包括（ ）。", options:["抗氧化","促进铁吸收","促进胶原合成","解毒"], answer:"ABCD" },
+    { text:"钙的生理功能包括（ ）。", options:["构成骨骼和牙齿","维持神经肌肉兴奋","参与血液凝固","调节酶活性"], answer:"ABCD" },  { text:"铁的生理功能包括（ ）。", options:["参与血红蛋白合成","参与肌红蛋白合成","参与能量代谢","参与免疫功能"], answer:"ABCD" },
     { text:"锌的生理功能包括（ ）。", options:["促进生长发育","增强免疫功能","维持味觉","促进伤口愈合"], answer:"ABCD" },
     { text:"硒的生理功能包括（ ）。", options:["抗氧化","增强免疫功能","解毒","保护心血管"], answer:"ABCD" },
     { text:"碘的生理功能包括（ ）。", options:["参与甲状腺激素合成","促进生长发育","调节新陈代谢","维持神经系统功能"], answer:"ABCD" },
@@ -342,9 +336,8 @@ const MULTI = [
     { text:"膳食调查的方法包括（ ）。", options:["称重法","记账法","24小时回顾法","食物频率问卷法"], answer:"ABCD" },
     { text:"营养不良的临床表现包括（ ）。", options:["体重下降","水肿","贫血","免疫力降低"], answer:"ABCD" }
 ];
-// 确保多选80题，上面已足80题（从1到80）
 
-// ======================== 4. 理论·判断题（40题，来自【理论知识】题库） ========================
+// ======================== 理论·判断题（40题） ========================
 const JUDGE = [
     { text:"玉米蛋白质中第二限制氨基酸为色氨酸。", answer:"B" },
     { text:"当人体缺乏维生素C时会引起佝偻病。", answer:"B" },
@@ -386,10 +379,11 @@ const JUDGE = [
     { text:"与吸烟、酗酒、缺乏活动、膳食不合理等生活方式密切相关的高血脂、高血压、高血糖、肥胖已成为影响我国人民健康素质的重要危险因素。", answer:"A" },
     { text:"营养相关问题指长期严重缺乏一种或多种食物造成机体产生各种临床表现或病症。", answer:"A" },
     { text:"维生素A对消除眼睛疲劳，保证视力有重要作用。", answer:"A" }
-];// ======================== 通用刷题逻辑（无解析，手动下一题） ========================
+];
+
+// ======================== 通用刷题逻辑 ========================
 let currentModule = 'skill';
-let questions = [];
-let currentIndex = 0, answered = false, currentQ = null;
+let questions = [];let currentIndex = 0, answered = false, currentQ = null;
 
 const progressSpan = document.getElementById('progress');
 const questionTextDiv = document.getElementById('questionText');
@@ -408,7 +402,7 @@ function evaluateMulti(isCorrect){ const q=currentQ; const correctLetters = q.an
 function evaluateJudge(chosen){ const q=currentQ; const isCorrect=(chosen===q.answer); const correctAns=q.answer==='A'?'正确':'错误'; if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctAns}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='none'; el.style.opacity='0.6'; }); }
 function nextQuestion(){ if(!answered) return; if(currentIndex+1<questions.length){ currentIndex++; renderQuestion(); if(currentModule==='theory_multi'){ document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=false; cb.checked=false; }); } else if(currentModule==='theory_judge'){ document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } else { document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } } else { feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='🎉 恭喜！您已完成当前模块所有题目！🎉'; feedbackDiv.style.display='block'; nextBtn.style.display='none'; optionsDiv.innerHTML='<div style="text-align:center;padding:1rem;">✨ 完成 ✨</div>'; questionTextDiv.innerText='本模块已通关！'; } }
 function resetModule(){ loadModule(currentModule, true); }
-function shuffleQuestions(){ if(questions.length===0) return; questions=shuffleArray(questions); currentIndex=0; answered=false; renderQuestion(); if(currentModule==='theory_multi'){ document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=false; cb.checked=false; }); } else if(currentModule==='theory_judge'){ document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } else { document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } }
+function shuffleQuestions(){ if(questions.length===0) return; questions=shuffleArray(questions); currentIndex=0; answered=false; renderQuestion();if(currentModule==='theory_multi'){ document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=false; cb.checked=false; }); } else if(currentModule==='theory_judge'){ document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } else { document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } }
 function switchModule(module){ currentModule=module; loadModule(module, true); document.querySelectorAll('.tab').forEach(tab=>{ if(tab.getAttribute('data-module')===module) tab.classList.add('active'); else tab.classList.remove('active'); }); }
 nextBtn.addEventListener('click', nextQuestion);
 resetBtn.addEventListener('click', resetModule);
