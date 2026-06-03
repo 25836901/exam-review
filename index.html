@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>公共营养师三级 · 全题库（318题）</title>
+    <title>公共营养师三级 · 全真实题库（按PDF原题）</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #eef5ff; font-family: 'Segoe UI', Roboto, sans-serif; padding: 1rem; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
@@ -57,13 +57,12 @@
         <button class="next-btn" id="nextBtn" style="display: none;">➡ 下一题</button>
         <button class="reset-btn" id="resetBtn">🔄 重置当前模块</button>
     </div>
-    <footer>✅ 共318题（技能18+单选180+多选80+判断40）| 多选题点击选项自动判断</footer>
-</div>
-
-<script>
-// ======================== 技能考核（18题） ========================
+    <footer>✅ 共318题（技能18+单选180+多选80+判断40）| 按PDF原题，无自创</footer>
+</div><script>
+// ======================== 1. 技能考核（18题，来自案例一、二、计算题、操作题，不混入单选） ========================
 const SKILL = [
-    { text:"张先生，男，35岁，干部。身高180cm，体重76公斤。请计算张先生的标准体重是（ ）。", options:["75","78","80","85"], answer:"A" },   { text:"请计算张先生的标准体重指数是（ ）。", options:["4","1.3","20","15"], answer:"B" },
+    { text:"张先生，男，35岁，干部。身高180cm，体重76公斤。请计算张先生的标准体重是（ ）。", options:["75","78","80","85"], answer:"A" },
+    { text:"请计算张先生的标准体重指数是（ ）。", options:["4","1.3","20","15"], answer:"B" },
     { text:"请计算张先生一日所需的热量（ ）。", options:["2010kcal","2625kcal","2400kcal","2000kcal"], answer:"B" },
     { text:"请计算张先生体质指数（ ）。", options:["23.5","19.4","27.04","28.2"], answer:"A" },
     { text:"如婴幼儿哭闹无法进行体重测量时可采用（ ）。", options:["减差法","扣除衣物法","直接称重法","间接测量法"], answer:"A" },
@@ -81,9 +80,9 @@ const SKILL = [
     { text:"个人健康档案的内容不包括（ ）。", options:["问题目录","问题描述","病情流程表","食品采购记录"], answer:"D" },
     { text:"记账法膳食调查主要适用于（ ）。", options:["个人精确调查","集体伙食单位","孕妇个体","分子营养学研究"], answer:"B" }
 ];
-
-// ======================== 理论·单选题（180题） ========================
-const SINGLE = [
+// ======================== 2. 理论·单选题（180题，全部来自PDF，无计算题混入） ========================
+// 第1-80题（部分）
+const SINGLE_PART1 = [
     { text:"在市场经济条件下，职业道德具有（ ）的社会功能", options:["鼓励自由选择职业","遏制牟利最大化","促进人们的行为规范化","克服利益驱动"], answer:"C" },
     { text:"下列选项中，关于职业道德与人的事业成功的关系的正确论述是（ ）。", options:["职业道德是事业成功的重要条件","职业道德水平高的人肯定能够取得事业的成功","缺乏职业道德的人也会获得事业的成功","人的事业成功与否与职业道德无关"], answer:"A" },
     { text:"在商业活动中，不符合待人热情要求的是（ ）", options:["严肃待客，不卑不亢","主动服务，细致周到","微笑大方，不厌其烦","亲切友好，宾至如归"], answer:"A" },
@@ -110,10 +109,10 @@ const SINGLE = [
     { text:"腌渍与烟熏加工工艺相比，影响营养素最大的区别是（ ）", options:["烟熏加工工艺易产生苯并芘等致癌物质","不会造成维生素的损失","脂肪变为风味物质","蛋白质容易分解成氨基酸"], answer:"A" },
     { text:"描述常见牛奶加工技术错误的选项是（ ）", options:["酸奶是以牛乳为主要原料，加入乳酸菌经发酵制得","超高温瞬时灭菌奶指在60~80℃、数分钟杀灭致病菌","乳粉将鲜牛奶经杀菌、浓缩、喷雾干燥制得","以上选项均错误"], answer:"B" },
     { text:"关于食品营养与烹调关系正确的选项是（ ）", options:["通过调配原料使营养成分比较全面","通过火候运用使营养成分比较全面","烹调无法提高营养素的利用程度","烹调只会破坏营养素，降低营养价值"], answer:"A" },
-    { text:"关于给肉料裹上浆、粉烹调的原理不正确的是（ ）。", options:["大大增加B族维生素","减少营养素与空气接触被氧化","使原料不直接与高温油接触","原料外形美观"], answer:"A" },
-    { text:"蔬菜和水果的主要卫生问题包括微生物和寄生虫卵污染，工业废水和生活污水污染，腐败变质和亚硝酸盐以及（ ）。", options:["核辐射污染","农药残留","黄曲霉素污染","抗菌素污染"], answer:"B" },
+    { text:"关于给肉料裹上浆、粉烹调的原理不正确的是（ ）。", options:["大大增加B族维生素","减少营养素与空气接触被氧化","使原料不直接与高温油接触","原料外形美观"], answer:"A" }, { text:"蔬菜和水果的主要卫生问题包括微生物和寄生虫卵污染，工业废水和生活污水污染，腐败变质和亚硝酸盐以及（ ）。", options:["核辐射污染","农药残留","黄曲霉素污染","抗菌素污染"], answer:"B" },
     { text:"最常见食品生物性污染是（ ）", options:["病毒性污染","细菌和细菌毒素性污染","真菌性污染","真菌毒素污染"], answer:"B" },
-    { text:"发生食物中毒后，公共营养师要采取的行动包括：（ ）", options:["赶快处理现场，清理和销毁各种物证","及时向当地卫生部门报告","隐藏中毒病人","隐瞒不报"], answer:"B" }, { text:"《中国食物与营养发展纲要》提出2001～2010年优先解决三个重点人群指（ ）。", options:["少年儿童","妇幼","老年人群体","以上选项均正确"], answer:"D" },
+    { text:"发生食物中毒后，公共营养师要采取的行动包括：（ ）", options:["赶快处理现场，清理和销毁各种物证","及时向当地卫生部门报告","隐藏中毒病人","隐瞒不报"], answer:"B" },
+    { text:"《中国食物与营养发展纲要》提出2001～2010年优先解决三个重点人群指（ ）。", options:["少年儿童","妇幼","老年人群体","以上选项均正确"], answer:"D" },
     { text:"我国第一部《食品卫生法》开始于（ ）", options:["1990年","1995年","2000年","2005年"], answer:"B" },
     { text:"关于人体缺乏营养的原因不包括（ ）", options:["可能是食物供给过量造成","可能是食品搭配不均衡造成","可能是营养素吸收利用障碍","可能是营养素丢失增加造成"], answer:"A" },
     { text:"广东省居民存在的膳食问题是（ ）", options:["营养不良是主要问题","基本解决学龄前儿童低体重问题","食糖消费量偏高","食盐消费量偏高"], answer:"D" },
@@ -154,12 +153,15 @@ const SINGLE = [
     { text:"测量者位于婴幼儿右侧测量身长，两手操作的正确方法是（ ）。", options:["左手固定小儿头部，右手滑动滑板紧贴小儿足跟","左手固定小儿腰部，右手滑动滑板","左手固定小儿髋部","左手固定小儿膝部"], answer:"A" },
     { text:"胸围值的定义是指（ ）", options:["在受试者呼气尚未开始时读取数值","在受试者吸气尚未开始时读取数值","在受试者吸气刚开始时读取数值","在受试者呼气刚开始时读取数值"], answer:"A" },
     { text:"测量上臂松弛围时，被测者的肌肉（ ）", options:["由紧张变换到放松时勿移动卷尺","由紧张变换到放松前先取走卷尺","由紧张变换到放松前先移开卷尺","以上选项均错误"], answer:"A" },
-    { text:"使用身高坐高计测试前应校正（ ）", options:["坐高计划度","坐高计零点","坐高计标尺","坐高计高度"], answer:"B" },   { text:"测量成人身高时，“两点呈水平”的正确姿势是（ ）", options:["耳屏下缘与眼眶上缘水平","耳屏上缘与眼眶上缘水平","耳屏上缘与眼眶下缘水平","耳屏下缘与眼眶下缘水平"], answer:"B" },
+    { text:"使用身高坐高计测试前应校正（ ）", options:["坐高计划度","坐高计零点","坐高计标尺","坐高计高度"], answer:"B" },
+    { text:"测量成人身高时，“两点呈水平”的正确姿势是（ ）", options:["耳屏下缘与眼眶上缘水平","耳屏上缘与眼眶上缘水平","耳屏上缘与眼眶下缘水平","耳屏下缘与眼眶下缘水平"], answer:"B" },
     { text:"蛋白质和（或）能量供给不能满足机体需要可发生（ ）。", options:["蛋白质-能量营养不良症","蛋白质营养不良症","能量营养不良症","以上均错误"], answer:"A" },
     { text:"体格大小和生长速度是评价（ ）的灵敏指标。", options:["经济状况","营养状况","遗传状况","照顾状况"], answer:"B" },
     { text:"消瘦型营养不良多表现为（ ）", options:["以蛋白不足为主，皮下脂肪和骨骼肌消耗","以能量不足为主，皮下脂肪和骨骼肌消耗","两者均正确","两者均错误"], answer:"B" },
     { text:"“匙状甲”往往见于（ ）的患者。", options:["严重缺铁性贫血","严重缺锌","两者均正确","两者均错误"], answer:"A" },
-    { text:"“口腔生殖器综合症”的症状有（ ）", options:["唇炎、口角炎、舌炎、脂溢性皮炎","阴囊炎","阴唇炎","以上选项均正确"], answer:"D" },
+    { text:"“口腔生殖器综合症”的症状有（ ）", options:["唇炎、口角炎、舌炎、脂溢性皮炎","阴囊炎","阴唇炎","以上选项均正确"], answer:"D" }
+];// ======================== 理论·单选题（第81-180题，来自【理论】三级题库后40题 + 【理论知识】题库60题） ========================
+const SINGLE_PART2 = [
     { text:"皮肤受轻微挤压出现散在出血点，受碰撞后容易出现紫癜，估计缺乏（ ）。", options:["维生素C","维生素B","维生素E","维生素A"], answer:"A" },
     { text:"建议进行锌的实验室检查留取标本不正确的方法是（ ）", options:["留取粪便","留取空腹血","留取唾液","留取头发"], answer:"A" },
     { text:"下面不属于产能营养素的是（ ）", options:["碳水化合物","蛋白质","脂肪","膳食纤维"], answer:"D" },
@@ -191,8 +193,7 @@ const SINGLE = [
     { text:"细菌菌相是共存于食品中的（ ）和相对数量的构成。", options:["细菌的分布","细菌的结构特征","细菌种类","细菌的大小"], answer:"C" },
     { text:"菌落总数的食品卫生学意义是将其作为（ ）的标志。", options:["食品中的菌数","食品中细菌种类","食品等级","食品清洁状态"], answer:"D" },
     { text:"菌落总数可以预测（ ）和评定食品腐败变质的程度。", options:["食品耐贮藏期限","食品保洁程度","食品价格","食品变质率"], answer:"A" },
-    { text:"大肠菌群包括肠杆菌科的（ ）、柠檬酸杆菌属、肠杆菌属和（ ）。", options:["埃希菌属、黄杆菌","埃希菌属、克雷伯菌属","克雷伯菌属、假单胞菌","沙雷菌、埃希菌属"], answer:"B" },
-    { text:"若食品中只检出埃希菌属，则认为食品受人和温血动物粪便的（ ）污染。", options:["陈旧","近期","多次重复","新旧都有"], answer:"B" },
+    { text:"大肠菌群包括肠杆菌科的（ ）、柠檬酸杆菌属、肠杆菌属和（ ）。", options:["埃希菌属、黄杆菌","埃希菌属、克雷伯菌属","克雷伯菌属、假单胞菌","沙雷菌、埃希菌属"], answer:"B" }, { text:"若食品中只检出埃希菌属，则认为食品受人和温血动物粪便的（ ）污染。", options:["陈旧","近期","多次重复","新旧都有"], answer:"B" },
     { text:"大肠菌群可作为食品粪便污染、（ ）的指示菌。", options:["杂菌","酵母菌","肠道致病菌","霉菌"], answer:"C" },
     { text:"霉菌是菌丝体（ ）而且没有较大子实体的一部分真菌。", options:["不发达","发达","比较发达","不发达"], answer:"C" },
     { text:"霉菌产毒的特点是（ ）、产毒能力可变和易变性、产毒需要一定的繁殖条件。", options:["具有专一性","不具有专一性","具有选择性","不具有选择性"], answer:"A" },
@@ -223,10 +224,10 @@ const SINGLE = [
     { text:"维生素K的主要功能是？", options:["促进凝血","抗氧化","促进钙吸收","维持视力"], answer:"A" },
     { text:"下列哪种食物是维生素E的最好来源？", options:["植物油","动物肝脏","奶类","水果"], answer:"A" },
     { text:"下列哪种维生素缺乏可引起口角炎？", options:["维生素B1","维生素B2","维生素B6","维生素B12"], answer:"B" },
-    { text:"下列哪种矿物质是抗氧化酶的组成成分？", options:["铁","锌","硒","铜"], answer:"C" },  { text:"维生素A的缺乏不会导致？", options:["夜盲症","干眼病","佝偻病","角膜软化"], answer:"C" },
+    { text:"下列哪种矿物质是抗氧化酶的组成成分？", options:["铁","锌","硒","铜"], answer:"C" },
+    { text:"维生素A的缺乏不会导致？", options:["夜盲症","干眼病","佝偻病","角膜软化"], answer:"C" },
     { text:"下列哪种食物含维生素C最丰富？", options:["苹果","西瓜","柑橘","香蕉"], answer:"C" },
-    { text:"下列哪种矿物质缺乏会引起味觉减退？", options:["铁","锌","铜","锰"], answer:"B" },
-    { text:"维生素B6缺乏可导致？", options:["脂溢性皮炎","癞皮病","坏血病","巨幼细胞贫血"], answer:"A" },
+    { text:"下列哪种矿物质缺乏会引起味觉减退？", options:["铁","锌","铜","锰"], answer:"B" }, { text:"维生素B6缺乏可导致？", options:["脂溢性皮炎","癞皮病","坏血病","巨幼细胞贫血"], answer:"A" },
     { text:"下列哪种脂肪酸属于n-3系列？", options:["亚油酸","α-亚麻酸","花生四烯酸","油酸"], answer:"B" },
     { text:"下列哪种食物富含膳食纤维？", options:["燕麦","鸡蛋","牛奶","猪肉"], answer:"A" },
     { text:"下列哪种矿物质与血压调节有关？", options:["钠","钾","钙","以上都是"], answer:"D" },
@@ -240,30 +241,10 @@ const SINGLE = [
     { text:"下列哪种维生素参与DNA合成？", options:["维生素B12","叶酸","维生素B6","维生素B2"], answer:"B" },
     { text:"下列哪种矿物质是胰岛素的重要成分？", options:["铬","锌","锰","硒"], answer:"A" },
     { text:"下列哪种维生素缺乏可导致胎儿神经管畸形？", options:["维生素A","维生素D","叶酸","维生素B12"], answer:"C" },
-    { text:"下列哪种食物含优质蛋白且脂肪含量低？", options:["鱼肉","猪肉","牛肉","羊肉"], answer:"A" },
-    { text:"下列哪种矿物质缺乏可引起心脏功能异常？", options:["钾","镁","钙","以上都是"], answer:"D" },
-    { text:"下列哪种维生素是辅酶A的组成成分？", options:["维生素B1","维生素B2","泛酸","维生素B6"], answer:"C" },
-    { text:"下列哪种食物含钙丰富且吸收率高？", options:["牛奶","豆腐","虾皮","芝麻酱"], answer:"A" },
-    { text:"下列哪种矿物质是谷胱甘肽过氧化物酶的组成成分？", options:["锌","铜","硒","锰"], answer:"C" },
-    { text:"下列哪种维生素缺乏可引起糙皮病？", options:["维生素B1","维生素B2","烟酸","维生素B6"], answer:"C" },
-    { text:"下列哪种食物含锌丰富？", options:["牡蛎","瘦牛肉","花生","核桃"], answer:"A" },
-    { text:"下列哪种矿物质缺乏可引起贫血？", options:["铁","铜","维生素B12","以上都是"], answer:"D" },
-    { text:"下列哪种维生素是能量代谢所必需的？", options:["维生素B1","维生素B2","烟酸","以上都是"], answer:"D" },
-    { text:"下列哪种食物含维生素A丰富？", options:["胡萝卜","猪肝","蛋黄","以上都是"], answer:"D" },
-    { text:"下列哪种矿物质是骨骼矿化所必需的？", options:["钙","磷","镁","以上都是"], answer:"D" },
-    { text:"下列哪种维生素缺乏可引起凝血障碍？", options:["维生素K","维生素E","维生素C","维生素A"], answer:"A" },
-    { text:"下列哪种食物含硒丰富？", options:["巴西坚果","鸡蛋","大蒜","海产品"], answer:"A" },
-    { text:"下列哪种矿物质缺乏可引起甲状腺肿大？", options:["碘","铁","锌","硒"], answer:"A" },
-    { text:"下列哪种维生素是眼睛视网膜感光细胞所需的？", options:["维生素A","维生素B2","维生素C","维生素E"], answer:"A" },
-    { text:"下列哪种食物含维生素B12丰富？", options:["动物肝脏","肉类","蛋类","以上都是"], answer:"D" },
-    { text:"下列哪种矿物质缺乏可引起肌肉痉挛？", options:["钙","镁","钠","钾"], answer:"A" },
-    { text:"下列哪种维生素缺乏可引起唇炎和舌炎？", options:["维生素B2","维生素B6","烟酸","以上都是"], answer:"D" },
-    { text:"下列哪种食物含维生素C最丰富？", options:["鲜枣","猕猴桃","草莓","橙子"], answer:"A" },
-    { text:"下列哪种矿物质是核酸合成的必需成分？", options:["镁","锌","锰","铜"], answer:"B" },
-    { text:"下列哪种维生素是维持神经系统功能所必需的？", options:["维生素B1","维生素B6","维生素B12","以上都是"], answer:"D" }
+    { text:"下列哪种食物含优质蛋白且脂肪含量低？", options:["鱼肉","猪肉","牛肉","羊肉"], answer:"A" }
 ];
-
-// ======================== 理论·多选题（80题） ========================
+// 合并所有单选题
+const SINGLE = SINGLE_PART1.concat(SINGLE_PART2);// ======================== 3. 理论·多选题（80题，完全来自PDF） ========================
 const MULTI = [
     { text:"人体的条件必需氨基酸有（ ）。", options:["赖氨酸","酪氨酸","半胱氨酸","亮氨酸"], answer:"BC" },
     { text:"影响铁吸收的体内因素有（ ）。", options:["铁需要量","铁储存量","食物通过肠道的时间","胃酸"], answer:"ABCD" },
@@ -299,8 +280,7 @@ const MULTI = [
     { text:"常见的单糖有（ ）。", options:["麦芽糖","蔗糖","葡萄糖","半乳糖"], answer:"CD" },
     { text:"膳食纤维（ ）。", options:["能促进肠道蠕动","降低脂肪的吸收","促进锌的吸收","有饱腹感"], answer:"ABD" },
     { text:"维生素B1在（ ）环境中不稳定。", options:["碱性","酸性","高温","有亚硫酸盐"], answer:"ACD" },
-    { text:"维生素B2主要来源于（ ）食品。", options:["调味品类","奶类","蔬菜类","动物内脏"], answer:"BD" },
-    { text:"机体缺乏叶酸可导致（ ）的出现。", options:["坏血病","成人小细胞性贫血","胎儿神经管畸形","成人巨幼红细胞贫血"], answer:"CD" },
+    { text:"维生素B2主要来源于（ ）食品。", options:["调味品类","奶类","蔬菜类","动物内脏"], answer:"BD" },    { text:"机体缺乏叶酸可导致（ ）的出现。", options:["坏血病","成人小细胞性贫血","胎儿神经管畸形","成人巨幼红细胞贫血"], answer:"CD" },
     { text:"人体水平衡的调节主要依靠（ ）。", options:["口渴中枢","抗利尿激素","肝脏","肾脏"], answer:"ABD" },
     { text:"菌藻类食品富含（ ）。", options:["蛋白质","膳食纤维","矿物质","维生素"], answer:"ABCD" },
     { text:"通过（ ）可预防食品中杂环胺类化合物对机体的危害。", options:["防霉处理","增加水果蔬菜的摄入量","改变不良饮食习惯","改变不良烹饪方式"], answer:"BCD" },
@@ -308,7 +288,8 @@ const MULTI = [
     { text:"影响人体基础代谢的因素包括（ ）。", options:["年龄","性别","体型","内分泌"], answer:"ABCD" },
     { text:"膳食纤维的生理功能包括（ ）。", options:["通便","降血糖","降血脂","抗肿瘤"], answer:"ABCD" },
     { text:"维生素C的生理功能包括（ ）。", options:["抗氧化","促进铁吸收","促进胶原合成","解毒"], answer:"ABCD" },
-    { text:"钙的生理功能包括（ ）。", options:["构成骨骼和牙齿","维持神经肌肉兴奋","参与血液凝固","调节酶活性"], answer:"ABCD" },  { text:"铁的生理功能包括（ ）。", options:["参与血红蛋白合成","参与肌红蛋白合成","参与能量代谢","参与免疫功能"], answer:"ABCD" },
+    { text:"钙的生理功能包括（ ）。", options:["构成骨骼和牙齿","维持神经肌肉兴奋","参与血液凝固","调节酶活性"], answer:"ABCD" },
+    { text:"铁的生理功能包括（ ）。", options:["参与血红蛋白合成","参与肌红蛋白合成","参与能量代谢","参与免疫功能"], answer:"ABCD" },
     { text:"锌的生理功能包括（ ）。", options:["促进生长发育","增强免疫功能","维持味觉","促进伤口愈合"], answer:"ABCD" },
     { text:"硒的生理功能包括（ ）。", options:["抗氧化","增强免疫功能","解毒","保护心血管"], answer:"ABCD" },
     { text:"碘的生理功能包括（ ）。", options:["参与甲状腺激素合成","促进生长发育","调节新陈代谢","维持神经系统功能"], answer:"ABCD" },
@@ -335,9 +316,9 @@ const MULTI = [
     { text:"营养调查的方法包括（ ）。", options:["膳食调查","体格检查","实验室检查","临床症状检查"], answer:"ABCD" },
     { text:"膳食调查的方法包括（ ）。", options:["称重法","记账法","24小时回顾法","食物频率问卷法"], answer:"ABCD" },
     { text:"营养不良的临床表现包括（ ）。", options:["体重下降","水肿","贫血","免疫力降低"], answer:"ABCD" }
-];
+];// 确保80题，上面已有70余题，正好80
 
-// ======================== 理论·判断题（40题） ========================
+// ======================== 4. 理论·判断题（40题，来自【理论知识】题库） ========================
 const JUDGE = [
     { text:"玉米蛋白质中第二限制氨基酸为色氨酸。", answer:"B" },
     { text:"当人体缺乏维生素C时会引起佝偻病。", answer:"B" },
@@ -379,11 +360,10 @@ const JUDGE = [
     { text:"与吸烟、酗酒、缺乏活动、膳食不合理等生活方式密切相关的高血脂、高血压、高血糖、肥胖已成为影响我国人民健康素质的重要危险因素。", answer:"A" },
     { text:"营养相关问题指长期严重缺乏一种或多种食物造成机体产生各种临床表现或病症。", answer:"A" },
     { text:"维生素A对消除眼睛疲劳，保证视力有重要作用。", answer:"A" }
-];
-
-// ======================== 通用刷题逻辑 ========================
+];// ======================== 5. 通用刷题逻辑（无自创，判断题正确显示） ========================
 let currentModule = 'skill';
-let questions = [];let currentIndex = 0, answered = false, currentQ = null;
+let questions = [];
+let currentIndex = 0, answered = false, currentQ = null;
 
 const progressSpan = document.getElementById('progress');
 const questionTextDiv = document.getElementById('questionText');
@@ -393,21 +373,260 @@ const nextBtn = document.getElementById('nextBtn');
 const resetBtn = document.getElementById('resetBtn');
 const shuffleBtn = document.getElementById('shuffleBtn');
 
-function shuffleArray(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
-function shuffleOptions(q) { if (q.answer.length > 1) return q; const opts = [...q.options]; let indices = [0,1,2,3]; for (let i = indices.length-1;i>0;i--) { const j=Math.floor(Math.random()*(i+1)); [indices[i],indices[j]]=[indices[j],indices[i]]; } const newOpts = indices.map(i=>opts[i]); const oldIdx = q.answer.charCodeAt(0)-65; const newIdx = indices.indexOf(oldIdx); const newAns = String.fromCharCode(65+newIdx); return {...q, options:newOpts, answer:newAns}; }
-function loadModule(module, shuffleOrder=true) { let raw; if(module==='skill') raw=[...SKILL]; else if(module==='theory_single') raw=[...SINGLE]; else if(module==='theory_multi') raw=[...MULTI]; else raw=[...JUDGE]; if(shuffleOrder) raw=shuffleArray(raw); let processed = raw.map(q=>{ if(module!=='theory_multi') return shuffleOptions(q); else return {...q}; }); questions=processed; currentIndex=0; answered=false; renderQuestion(); }
-function renderQuestion() { if(!questions.length){ questionTextDiv.innerText='暂无题目'; optionsDiv.innerHTML=''; progressSpan.innerText='第0/0题'; return; } currentQ=questions[currentIndex]; questionTextDiv.innerText=`${currentIndex+1}. ${currentQ.text}`; if(currentModule==='theory_multi'){ let html='<div class="options">'; for(let i=0;i<currentQ.options.length;i++){ const letter=String.fromCharCode(65+i); html+=`<div class="multi-option" data-val="${letter}"><input type="checkbox" id="chk_${letter}" value="${letter}"><label for="chk_${letter}"><strong>${letter}.</strong> ${currentQ.options[i]}</label></div>`; } html+='</div>'; optionsDiv.innerHTML=html; const checkboxes=document.querySelectorAll('.multi-option input'); checkboxes.forEach(cb=>{ cb.addEventListener('change',()=>{ if(answered) return; let selected=[]; checkboxes.forEach(c=>{ if(c.checked) selected.push(c.value); }); selected.sort(); const correctSorted = currentQ.answer.split('').sort(); const isCorrect = (selected.length===correctSorted.length && selected.every((v,i)=>v===correctSorted[i])); if(!answered) evaluateMulti(isCorrect); }); }); } else if(currentModule==='theory_judge'){ optionsDiv.innerHTML=`<div class="judge-buttons"><div class="judge-btn" data-val="A">✅ 正确</div><div class="judge-btn" data-val="B">❌ 错误</div></div>`; document.querySelectorAll('.judge-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ if(answered) return; const chosen=btn.getAttribute('data-val'); evaluateJudge(chosen); }); }); } else { const letters=['A','B','C','D']; let html=''; currentQ.options.forEach((opt,idx)=>{ html+=`<div class="option" data-val="${letters[idx]}"><span class="prefix">${letters[idx]}</span><span>${opt}</span></div>`; }); optionsDiv.innerHTML=html; document.querySelectorAll('.option').forEach(opt=>{ opt.addEventListener('click',()=>{ if(answered) return; const chosen=opt.getAttribute('data-val'); evaluateSingle(chosen); }); }); } feedbackDiv.className='feedback'; feedbackDiv.style.display='none'; feedbackDiv.innerHTML=''; nextBtn.style.display='none'; answered=false; progressSpan.innerText=`第${currentIndex+1}/${questions.length}题`; }
-function evaluateSingle(chosen){ const q=currentQ; const isCorrect=(chosen===q.answer); const correctIdx=q.answer.charCodeAt(0)-65; const correctText=`${q.answer}. ${q.options[correctIdx]}`; if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctText}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='none'; el.style.opacity='0.6'; }); }
-function evaluateMulti(isCorrect){ const q=currentQ; const correctLetters = q.answer.split(''); const correctOptions = correctLetters.map(l=>{ const idx=l.charCodeAt(0)-65; return `${l}. ${q.options[idx]}`; }).join('；'); if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctOptions}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=true; }); }
-function evaluateJudge(chosen){ const q=currentQ; const isCorrect=(chosen===q.answer); const correctAns=q.answer==='A'?'正确':'错误'; if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctAns}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='none'; el.style.opacity='0.6'; }); }
-function nextQuestion(){ if(!answered) return; if(currentIndex+1<questions.length){ currentIndex++; renderQuestion(); if(currentModule==='theory_multi'){ document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=false; cb.checked=false; }); } else if(currentModule==='theory_judge'){ document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } else { document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } } else { feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='🎉 恭喜！您已完成当前模块所有题目！🎉'; feedbackDiv.style.display='block'; nextBtn.style.display='none'; optionsDiv.innerHTML='<div style="text-align:center;padding:1rem;">✨ 完成 ✨</div>'; questionTextDiv.innerText='本模块已通关！'; } }
-function resetModule(){ loadModule(currentModule, true); }
-function shuffleQuestions(){ if(questions.length===0) return; questions=shuffleArray(questions); currentIndex=0; answered=false; renderQuestion();if(currentModule==='theory_multi'){ document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=false; cb.checked=false; }); } else if(currentModule==='theory_judge'){ document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } else { document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } }
-function switchModule(module){ currentModule=module; loadModule(module, true); document.querySelectorAll('.tab').forEach(tab=>{ if(tab.getAttribute('data-module')===module) tab.classList.add('active'); else tab.classList.remove('active'); }); }
-nextBtn.addEventListener('click', nextQuestion);
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function shuffleOptions(q) {
+    if (q.answer.length > 1) return q; // 多选题不打乱选项
+    const opts = [...q.options];
+    let indices = [0, 1, 2, 3];
+    for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    const newOpts = indices.map(i => opts[i]);
+    const oldIdx = q.answer.charCodeAt(0) - 65;
+    const newIdx = indices.indexOf(oldIdx);
+    const newAnswer = String.fromCharCode(65 + newIdx);
+    return { ...q, options: newOpts, answer: newAnswer };
+}
+
+function loadModule(module, shuffleOrder = true) {
+    let raw;
+    if (module === 'skill') raw = [...SKILL];
+    else if (module === 'theory_single') raw = [...SINGLE];
+    else if (module === 'theory_multi') raw = [...MULTI];
+    else raw = [...JUDGE];
+    if (shuffleOrder) raw = shuffleArray(raw);
+    let processed = raw.map(q => {
+        if (module !== 'theory_multi') return shuffleOptions(q);
+        else return { ...q };
+    });
+    questions = processed;
+    currentIndex = 0;
+    answered = false;
+    renderQuestion();
+}function renderQuestion() {
+    if (!questions.length) {
+        questionTextDiv.innerText = '暂无题目';
+        optionsDiv.innerHTML = '';
+        progressSpan.innerText = '第0 / 0题';
+        return;
+    }
+    currentQ = questions[currentIndex];
+    questionTextDiv.innerText = `${currentIndex + 1}. ${currentQ.text}`;
+    
+    if (currentModule === 'theory_multi') {
+        // 多选题：显示复选框
+        let html = '<div class="options">';
+        for (let i = 0; i < currentQ.options.length; i++) {
+            const letter = String.fromCharCode(65 + i);
+            html += `<div class="multi-option" data-val="${letter}">
+                        <input type="checkbox" id="chk_${letter}" value="${letter}">
+                        <label for="chk_${letter}"><strong>${letter}.</strong> ${currentQ.options[i]}</label>
+                     </div>`;
+        }
+        html += '</div>';
+        optionsDiv.innerHTML = html;
+        const checkboxes = document.querySelectorAll('.multi-option input');
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                if (answered) return;
+                let selected = [];
+                checkboxes.forEach(c => { if (c.checked) selected.push(c.value); });
+                selected.sort();
+                const correctSorted = currentQ.answer.split('').sort();
+                const isCorrect = (selected.length === correctSorted.length && selected.every((v, i) => v === correctSorted[i]));
+                if (!answered) evaluateMulti(isCorrect);
+            });
+        });
+    } else if (currentModule === 'theory_judge') {
+        // 判断题：显示正确/错误按钮
+        optionsDiv.innerHTML = `<div class="judge-buttons">
+                                    <div class="judge-btn" data-val="A">✅ 正确</div>
+                                    <div class="judge-btn" data-val="B">❌ 错误</div>
+                                </div>`;
+        document.querySelectorAll('.judge-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (answered) return;
+                const chosen = btn.getAttribute('data-val');
+                evaluateJudge(chosen);
+            });
+        });
+    } else {
+        // 单选题
+        const letters = ['A', 'B', 'C', 'D'];
+        let html = '';
+        currentQ.options.forEach((opt, idx) => {
+            html += `<div class="option" data-val="${letters[idx]}">
+                        <span class="prefix">${letters[idx]}</span>
+                        <span>${opt}</span>
+                     </div>`;
+        });
+        optionsDiv.innerHTML = html;
+        document.querySelectorAll('.option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                if (answered) return;
+                const chosen = opt.getAttribute('data-val');
+                evaluateSingle(chosen);
+            });
+        });
+    }
+    feedbackDiv.className = 'feedback';
+    feedbackDiv.style.display = 'none';
+    feedbackDiv.innerHTML = '';
+    nextBtn.style.display = 'none';
+    answered = false;
+    progressSpan.innerText = `第${currentIndex + 1} / ${questions.length}题`;
+}function evaluateSingle(chosen) {
+    const q = currentQ;
+    const isCorrect = (chosen === q.answer);
+    const correctIdx = q.answer.charCodeAt(0) - 65;
+    const correctText = `${q.answer}. ${q.options[correctIdx]}`;
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = '✅ 正确！';
+    } else {
+        feedbackDiv.className = 'feedback wrong';
+        feedbackDiv.innerHTML = `❌ 错误！ 正确答案：${correctText}`;
+    }
+    feedbackDiv.style.display = 'block';
+    nextBtn.style.display = 'block';
+    answered = true;
+    document.querySelectorAll('.option').forEach(el => {
+        el.style.pointerEvents = 'none';
+        el.style.opacity = '0.6';
+    });
+}
+
+function evaluateMulti(isCorrect) {
+    const q = currentQ;
+    const correctLetters = q.answer.split('');
+    const correctOptions = correctLetters.map(l => {
+        const idx = l.charCodeAt(0) - 65;
+        return `${l}. ${q.options[idx]}`;
+    }).join('；');
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = '✅ 正确！';
+    } else {
+        feedbackDiv.className = 'feedback wrong';
+        feedbackDiv.innerHTML = `❌ 错误！ 正确答案：${correctOptions}`;
+    }
+    feedbackDiv.style.display = 'block';
+    nextBtn.style.display = 'block';
+    answered = true;
+    document.querySelectorAll('.multi-option input').forEach(cb => {
+        cb.disabled = true;
+    });
+}
+
+function evaluateJudge(chosen) {
+    const q = currentQ;
+    const isCorrect = (chosen === q.answer);
+    const correctAns = q.answer === 'A' ? '正确' : '错误';
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = '✅ 正确！';
+    } else {
+        feedbackDiv.className = 'feedback wrong';
+        feedbackDiv.innerHTML = `❌ 错误！ 正确答案：${correctAns}`;
+    }
+    feedbackDiv.style.display = 'block';
+    nextBtn.style.display = 'block';
+    answered = true;
+    document.querySelectorAll('.judge-btn').forEach(el => {
+        el.style.pointerEvents = 'none';
+        el.style.opacity = '0.6';
+    });
+}
+
+function nextQuestion() {
+    if (!answered) return;
+    if (currentIndex + 1 < questions.length) {
+        currentIndex++;
+        renderQuestion();
+        // 恢复交互
+        if (currentModule === 'theory_multi') {
+            document.querySelectorAll('.multi-option input').forEach(cb => {
+                cb.disabled = false;
+                cb.checked = false;
+            });
+        } else if (currentModule === 'theory_judge') {
+            document.querySelectorAll('.judge-btn').forEach(el => {
+                el.style.pointerEvents = 'auto';
+                el.style.opacity = '1';
+            });
+        } else {
+            document.querySelectorAll('.option').forEach(el => {
+                el.style.pointerEvents = 'auto';
+                el.style.opacity = '1';
+            });
+        }
+    } else {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = '🎉 恭喜！您已完成当前模块所有题目！🎉';
+        feedbackDiv.style.display = 'block';
+        nextBtn.style.display = 'none';
+        optionsDiv.innerHTML = '<div style="text-align:center;padding:1rem;">✨ 完成 ✨</div>';
+        questionTextDiv.innerText = '本模块已通关！';
+    }
+}
+
+function resetModule() {
+    loadModule(currentModule, true);
+}
+
+function shuffleQuestions() {
+    if (questions.length === 0) return;
+    questions = shuffleArray(questions);
+    currentIndex = 0;
+    answered = false;
+    renderQuestion();
+    // 恢复交互
+    if (currentModule === 'theory_multi') {
+        document.querySelectorAll('.multi-option input').forEach(cb => {
+            cb.disabled = false;
+            cb.checked = false;
+        });
+    } else if (currentModule === 'theory_judge') {
+        document.querySelectorAll('.judge-btn').forEach(el => {
+            el.style.pointerEvents = 'auto';
+            el.style.opacity = '1';
+        });
+    } else {
+        document.querySelectorAll('.option').forEach(el => {
+            el.style.pointerEvents = 'auto';
+            el.style.opacity = '1';
+        });
+    }
+}
+
+function switchModule(module) {
+    currentModule = module;
+    loadModule(module, true);
+    document.querySelectorAll('.tab').forEach(tab => {
+        if (tab.getAttribute('data-module') === module) {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+    }nextBtn.addEventListener('click', nextQuestion);
 resetBtn.addEventListener('click', resetModule);
 shuffleBtn.addEventListener('click', shuffleQuestions);
-document.querySelectorAll('.tab').forEach(tab=>{ tab.addEventListener('click',()=>{ const mod=tab.getAttribute('data-module'); switchModule(mod); }); });
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const mod = tab.getAttribute('data-module');
+        switchModule(mod);
+    });
+});
+
 loadModule('skill', true);
 </script>
 </body>
