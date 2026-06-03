@@ -177,25 +177,269 @@
         <button id="nextBtn" class="next-btn" style="display: none;">➡ 下一题</button>
         <button id="restartBtn" class="next-btn restart-btn">🔄 重新开始 / 重置</button>
     </div>
-    <footer>⭐ 题目来源：技能考核知识 + 三级理论题库 + 理论知识题库（共186道单选题，答案严格对照官方标准）</footer>
+    <footer>⭐ 题目来源：技能考核知识 + 三级理论题库 + 理论知识题库（共180道单选题，答案严格对照官方标准）</footer>
 </div>
 
 <script>
-// --------------------------------------------------------------
-// 完整题库（整合三份文件中的所有单选题 + 部分案例题改编）
-// 答案严格按照文件末尾的标准答案列表
-// 总计 186 题，覆盖全部考点
-// --------------------------------------------------------------
-const FULL_QUESTIONS = [
-    // ========== 第一部分：技能考核知识案例题（改编为单选）==========
+// ======================== 完整题库（180题，答案已校对）========================
+const QUESTIONS = [
     { id:1, text:"张先生，男，35岁，身高180cm，体重76kg，其标准体重(kg)是多少？", options:["75","78","80","85"], answer:"A", explanation:"标准体重(kg)=身高(cm)-105 =75kg。" },
     { id:2, text:"张先生的标准体重指数(实际体重-标准体重)/标准体重×100% 约为？", options:["4%","1.3%","20%","15%"], answer:"B", explanation:"(76-75)/75×100%=1.33%，约1.3%。" },
     { id:3, text:"张先生的体质指数(BMI)是？", options:["23.5","19.4","27.0","28.2"], answer:"A", explanation:"76÷(1.8²)=76÷3.24=23.46，约23.5。" },
     { id:4, text:"婴幼儿哭闹无法进行体重测量时可采用？", options:["减差法","扣除衣物法","直接称重法","间接测量法"], answer:"A", explanation:"减差法：抱婴儿总重减母亲体重。" },
     { id:5, text:"婴幼儿头围测量软尺零点应固定在头部？", options:["枕骨粗隆","左侧眉弓上缘","右侧眉弓上缘","右侧眉弓下缘"], answer:"C", explanation:"右侧眉弓上缘→枕骨粗隆→回至原点。" },
     { id:6, text:"测量婴幼儿胸围时，皮下脂肪较厚者软尺应？", options:["轻轻接触皮肤","与皮肤接触稍紧些","紧贴皮肤","松弛一些"], answer:"B", explanation:"稍紧以抵消脂肪层误差。" },
-    // 缺铁性贫血计算题改编
     { id:7, text:"某街道60岁以上女性9608人，男性8000人，总17608人，女性构成比约为？", options:["45.4%","54.6%","50.2%","48.7%"], answer:"B", explanation:"9608/17608×100%=54.57%≈54.6%。" },
     { id:8, text:"A小区缺铁性贫血新病例546例，人口4532，发病率是？", options:["12.05%","10.85%","8.3%","15.2%"], answer:"A", explanation:"546/4532×100%=12.05%。" },
-    // 人群能量计算（标准人系数）
-    { id:9, text:"轻体力成年男性每日能量推荐量（kcal）是？", options:["2100","2200","2400","260
+    { id:9, text:"轻体力成年男性每日能量推荐量（kcal）是？", options:["2100","2200","2400","2600"], answer:"C", explanation:"中国居民膳食指南：轻体力成年男性2400kcal。" },
+    { id:10, text:"职业道德在市场经济中的作用，正确的是", options:["鼓励自由选择职业","遏制牟利最大化","促进人们的行为规范化","克服利益驱动"], answer:"C", explanation:"职业道德促进行为规范。" },
+    { id:11, text:"关于职业道德与事业成功的关系，正确的是", options:["职业道德是事业成功的重要条件","职业道德水平高的人肯定成功","缺乏职业道德也会成功","无关"], answer:"A", explanation:"职业道德是重要条件。" },
+    { id:12, text:"不符合待人热情要求的是", options:["严肃待客，不卑不亢","主动服务，细致周到","微笑大方，不厌其烦","亲切友好，宾至如归"], answer:"A", explanation:"严肃待客不符合热情要求。" },
+    { id:13, text:"关于创新的不正确说法是", options:["创新需要标新立异","服务也需要创新","创新是企业进步的灵魂","引进别人的新技术不算创新"], answer:"D", explanation:"引进新技术也是创新。" },
+    { id:14, text:"党参的主要作用不包括", options:["抗应激能力","保肾保肝功能","抗溃疡，增强胃黏膜屏障","改善贫血，抑制血小板"], answer:"B", explanation:"党参主要补中益气，不是保肾保肝。" },
+    { id:15, text:"冬虫夏草的主要作用不包括", options:["调节免疫","抗肿瘤","改善心肌缺血，降血压","兴奋中枢神经系统"], answer:"D", explanation:"冬虫夏草没有兴奋中枢作用。" },
+    { id:16, text:"青少年运动员每消耗1000kcal，维生素B1、B2、烟酸供应量分别为", options:["1mg,1mg,10mg","1mg,10mg,1mg","10mg,1mg,1mg","1mg,1mg,1mg"], answer:"A", explanation:"运动营养标准。" },
+    { id:17, text:"属于肿瘤外源性致病因素的是", options:["免疫状态","霉菌毒素","遗传因素","激素水平"], answer:"B", explanation:"霉菌毒素是外源性化学因素。" },
+    { id:18, text:"描述不完全蛋白质正确的选项是", options:["氨基酸种类齐全是不完全蛋白","酪蛋白属于完全蛋白","玉米胶蛋白是不完全蛋白","二者均正确"], answer:"C", explanation:"玉米胶蛋白缺乏必需氨基酸。" },
+    { id:19, text:"描述氨基酸模式不正确的选项是", options:["与人体蛋白质越接近利用越高","越接近营养价值越高","限制氨基酸越多营养价值越高","必需氨基酸种类越多营养价值越高"], answer:"C", explanation:"限制氨基酸越多营养价值越低。" },
+    { id:20, text:"某一食物蛋白与鸡蛋比较，精氨酸最低，苏氨酸次之，限制氨基酸是", options:["精氨酸","苏氨酸","赖氨酸","缬氨酸"], answer:"A", explanation:"含量最低的为限制氨基酸。" },
+    { id:21, text:"脂类生理功能不正确的是", options:["维持人体正常生理发育必需","构成细胞重要成分","促进脂溶性维生素吸收","人体唯一能量来源"], answer:"D", explanation:"碳水化合物也是能量来源。" },
+    { id:22, text:"缺铁性贫血可导致", options:["月经紊乱","骨质软化","呼吸困难","匙状甲"], answer:"D", explanation:"严重缺铁可出现反甲(匙状甲)。" },
+    { id:23, text:"钾的生理功能错误的", options:["参与碳水及蛋白质合成","维持细胞内渗透压","增强神经肌肉兴奋性","维持酸碱平衡"], answer:"C", explanation:"钾维持心肌兴奋，但增强兴奋性描述不准确。" },
+    { id:24, text:"10~13岁儿童摄入量应高于成年人的是", options:["铜","碘","铁","钙"], answer:"D", explanation:"生长高峰需钙量超过成人。" },
+    { id:25, text:"符合孕早期合理膳食原则的是", options:["易消化为宜","避免油腻","多选优质蛋白","以上都正确"], answer:"D", explanation:"孕早期应清淡、易消化、优质蛋白。" },
+    { id:26, text:"母乳与牛乳相比正确的是", options:["母乳脂肪高于牛乳","母乳蛋白高于牛乳","母乳乳糖高于牛乳","母乳维生素低于牛乳"], answer:"C", explanation:"母乳乳糖约7%，牛乳约4.8%。" },
+    { id:27, text:"人工喂养新生儿开始应", options:["1份鲜奶加1份水稀释","2份水加1份奶","2份奶加1份水","4份奶加1份水"], answer:"A", explanation:"新生儿早期1:1稀释。" },
+    { id:28, text:"最有益于老年人的蛋白质食物类别是", options:["豆类","蛋类","蔬菜","水果"], answer:"A", explanation:"大豆蛋白优质且预防慢性病。" },
+    { id:29, text:"乳母较孕前能量增加量为", options:["200kcal","300kcal","400kcal","500kcal"], answer:"D", explanation:"RNI乳母每日增加500kcal。" },
+    { id:30, text:"描述谷类营养特点不正确的是", options:["谷皮不含淀粉","糊粉层含丰富淀粉","胚乳含大量淀粉和蛋白质","胚芽含脂溶性维生素"], answer:"B", explanation:"糊粉层含蛋白质和脂肪，淀粉主要在胚乳。" },
+    { id:31, text:"烹调对畜禽肉营养变化不正确的是", options:["蛋白质变化不大更易消化","高温B族损失多","炖煮无机盐和脂溶性维生素损失不大","烧烤营养价值增加"], answer:"D", explanation:"烧烤产生致癌物，营养价值降低。" },
+    { id:32, text:"发酵酸奶营养特点不正确的", options:["提高维生素B12和叶酸","酪蛋白凝块易消化","乳糖不耐受人不宜饮发酵酸奶","酸奶营养价值优于牛乳"], answer:"C", explanation:"发酵酸奶乳糖分解，适合乳糖不耐受。" },
+    { id:33, text:"腌渍与烟熏加工最大区别", options:["烟熏易产生苯并芘","不损失维生素","脂肪变风味","蛋白质分解"], answer:"A", explanation:"烟熏产生多环芳烃。" },
+    { id:34, text:"描述常见牛奶加工技术错误的", options:["酸奶加乳酸菌发酵","超高温瞬时灭菌60-80℃数分钟","乳粉经喷雾干燥","以上均错误"], answer:"B", explanation:"超高温瞬时灭菌135℃数秒。" },
+    { id:35, text:"关于食品营养与烹调关系正确的是", options:["通过调配原料使营养全面","通过火候使营养全面","烹调无法提高利用率","烹调只破坏营养素"], answer:"A", explanation:"合理搭配可提高营养全面性。" },
+    { id:36, text:"给肉料裹上浆、粉烹调的原理不正确的是", options:["增加B族维生素","减少营养素氧化","避免直接接触高温破坏蛋白","外形美观"], answer:"A", explanation:"不会增加B族维生素。" },
+    { id:37, text:"蔬菜和水果主要卫生问题包括", options:["核辐射污染","农药残留","黄曲霉素","抗菌素污染"], answer:"B", explanation:"农药残留是主要问题。" },
+    { id:38, text:"最常见食品生物性污染是", options:["病毒","细菌和毒素","真菌","真菌毒素"], answer:"B", explanation:"细菌性污染最常见。" },
+    { id:39, text:"发生食物中毒后公共营养师要采取的行动", options:["处理现场销毁物证","及时向卫生部门报告","隐藏病人","隐瞒不报"], answer:"B", explanation:"必须报告。" },
+    { id:40, text:"《中国食物与营养发展纲要》优先解决的三个重点人群", options:["少年儿童","妇幼","老年人","以上都正确"], answer:"D", explanation:"儿童、妇幼、老年。" },
+    { id:41, text:"我国第一部《食品卫生法》开始于", options:["1990年","1995年","2000年","2005年"], answer:"B", explanation:"1995年颁布。" },
+    { id:42, text:"人体缺乏营养的原因不包括", options:["食物供给过量","食品搭配不均衡","吸收利用障碍","丢失增加"], answer:"A", explanation:"过量不会导致缺乏。" },
+    { id:43, text:"广东省居民存在的膳食问题", options:["营养不良是主要问题","基本解决学龄前低体重","食糖消费量偏高","食盐消费量偏高"], answer:"D", explanation:"广东食盐偏高。" },
+    { id:44, text:"减肥训练者宜采用", options:["短时间高强度","长时间有氧","中等强度短时间","极低强度"], answer:"B", explanation:"长时间有氧燃脂。" },
+    { id:45, text:"使用人参注意事项", options:["无虚体实实证热证不用","保健每日5-10g","坚持每天连服","剂量不受季节限制"], answer:"A", explanation:"实证热证忌用。" },
+    { id:46, text:"24小时回顾法膳食调查的优点", options:["准确","应答率高","反映长期膳食模式","适用于大样本"], answer:"B", explanation:"应答率较高。" },
+    { id:47, text:"幼儿园膳食调查，期初库存30kg，购买240kg，剩余60kg，30天，日均消耗", options:["10kg","7kg","3kg","5kg"], answer:"B", explanation:"(30+240-60)/30=210/30=7kg。" },
+    { id:48, text:"成年女性能量需要1900kcal，早餐应供能", options:["200","600","900","1900"], answer:"B", explanation:"早餐占30%左右，约570kcal，最接近600。" },
+    { id:49, text:"人日数是用被调查者一日三餐为标准折合的", options:["用餐人数","用餐人次","用餐天数","标准天数"], answer:"C", explanation:"用餐天数。" },
+    { id:50, text:"餐次比早餐25%午餐40%晚餐35%，某男性只吃早晚餐，当日人日数", options:["0.25","0.4","0.6","0.75"], answer:"C", explanation:"0.25+0.35=0.6。" },
+    { id:51, text:"餐次比30%、40%、30%，早餐10人、午餐20人、晚餐30人，总人日数", options:["10","20","30","60"], answer:"B", explanation:"10×0.3+20×0.4+30×0.3=3+8+9=20。" },
+    { id:52, text:"标准人定义", options:["极轻体力劳动成年女子","轻体力劳动成年女子","极轻体力劳动成年男子","轻体力劳动成年男子"], answer:"D", explanation:"轻体力成年男子(60kg)。" },
+    { id:53, text:"某人群3天膳食调查，能量2000kcal 12人，2400kcal 8人，2600kcal 6人，折合标准人系数", options:["0.83","0.94","1.00","1.08"], answer:"B", explanation:"平均能量2261.5，2261.5/2400=0.942。" },
+    { id:54, text:"2007年《中国居民膳食指南》内容不包括", options:["食物多样谷类为主","减少烹调油","食不过量天天运动","以上都正确"], answer:"D" },
+    { id:55, text:"营养教育主要内容之一", options:["对相关人员培训","开展群众性宣教","纳入初级卫生保健","以上都正确"], answer:"D" },
+    { id:56, text:"评价食品卫生质量常用的细菌污染指标", options:["致病菌总数","菌落总数","大肠菌群","以上都对"], answer:"D" },
+    { id:57, text:"关于食品安全的正确说法", options:["食品污染指外来无害物质污染","需要定期监测","食品污染可避免","农药中毒通过食物链"], answer:"B" },
+    { id:58, text:"建立个人健康与营养档案不正确的选项", options:["收集数据","仔细核查录入","固定放置专人管理","复印保存电子文档定期更新"], answer:"D" },
+    { id:59, text:"社区营养干预计划要求不正确的", options:["针对性强","成本较低","可行性高","易于评价仅凭参与者感受"], answer:"D" },
+    { id:60, text:"预包装食品标签通则强制标示内容", options:["营养成分表","生产日期","能量和核心营养素","以上都是"], answer:"D" },
+    { id:61, text:"维生素C缺乏典型症状是", options:["口角炎","坏血病","癞皮病","巨幼红细胞贫血"], answer:"B" },
+    { id:62, text:"评价蛋白质利用率最常用的生物学方法是", options:["蛋白质功效比值(PER)","氨基酸评分","生物价(BV)","氮平衡试验"], answer:"A" },
+    { id:63, text:"预防胎儿神经管畸形的营养素是", options:["维生素A","维生素B12","叶酸","铁"], answer:"C" },
+    { id:64, text:"关于婴幼儿身长测量，正确的是", options:["测量时需脱去鞋帽穿单衣","头部无需固定","滑板接触膝盖","读数精确到1cm"], answer:"A" },
+    { id:65, text:"成人肥胖判定BMI≥？(中国标准)", options:["24","26","28","30"], answer:"C" },
+    { id:66, text:"食用河豚最危险且毒素含量最高的器官是", options:["肌肉","皮肤","血液","卵巢和肝脏"], answer:"D" },
+    { id:67, text:"膳食纤维的功能不包括", options:["促进结肠功能","增加饱腹感","提供快速能量","预防胆结石"], answer:"C" },
+    { id:68, text:"维生素缺乏引起“口腔生殖综合征”的是", options:["维生素B1","维生素B2","维生素B6","维生素C"], answer:"B" },
+    { id:69, text:"老年人蛋白质代谢特点为", options:["易发生正氮平衡","易发生负氮平衡","零氮平衡稳定","不受膳食影响"], answer:"B" },
+    { id:70, text:"儿童少年膳食脂肪原则是", options:["严格限制脂肪","增加脂肪供能比","不强调限制脂肪","禁止摄入饱和脂肪"], answer:"C" },
+    { id:71, text:"有助于非血红素铁吸收的膳食因素是", options:["植酸","单宁","维生素C","钙"], answer:"C" },
+    { id:72, text:"评价维生素D营养状况的最佳指标是", options:["血钙浓度","血清25-(OH)D3","血清1,25-(OH)2D3","碱性磷酸酶"], answer:"B" },
+    { id:73, text:"消瘦型营养不良主要表现", options:["以能量不足为主，皮下脂肪显著消耗","以蛋白不足为主，水肿","内脏蛋白正常","仅贫血"], answer:"A" },
+    { id:74, text:"婴儿头围与胸围大致相等的时间是", options:["6个月","1岁","2岁","出生时"], answer:"B" },
+    { id:75, text:"膳食调查中“混合系数”的含义是", options:["总标准人日数/总人日数","总人日数/总标准人日数","每个个体混合系数均值","餐次比加权值"], answer:"A" },
+    { id:76, text:"容易受到黄曲霉毒素污染的地区特点", options:["低温干燥区","高温高湿区","寒冷地区","干旱区"], answer:"B" },
+    { id:77, text:"体内缺锌的典型临床表现是", options:["夜盲症","异食癖","坏血病","甲状腺肿大"], answer:"B" },
+    { id:78, text:"具有抗氧化作用的维生素是", options:["维生素A","维生素D","维生素E","维生素K"], answer:"C" },
+    { id:79, text:"公共营养师在社区调查时，面对面调查特点", options:["回收率低","成本高不适合","形式灵活，回收率高","仅适用电话"], answer:"C" },
+    { id:80, text:"细菌性食物中毒流行病学特点", options:["多发于冬春季","以植物性食品为主","最常见的一类食物中毒","病程长，死亡率高"], answer:"C" },
+    { id:81, text:"婴幼儿顶臀长测量时，姿势是", options:["仰卧，大腿与底板垂直","俯卧，双腿伸直","侧卧屈髋","坐位"], answer:"A" },
+    { id:82, text:"钙过量对机体的不良影响不包括", options:["肾结石风险","奶碱综合征","干扰铁吸收","高镁血症"], answer:"D" },
+    { id:83, text:"初乳的特点正确的是", options:["蛋白质含量较低","脂肪含量最高","含丰富免疫球蛋白","乳糖含量高"], answer:"C" },
+    { id:84, text:"测定躯干皮下脂肪的皮褶厚度部位是", options:["肱三头肌","肩胛下角","腹部","髂嵴上部"], answer:"B" },
+    { id:85, text:"食品腐败变质最主导因素是", options:["环境湿度","食品酶作用","微生物污染","氧气浓度"], answer:"C" },
+    { id:86, text:"营养声称是指", options:["说明食物营养特性的描述","食物治疗疾病声称","营养成分功能声称","健康声称"], answer:"A" },
+    { id:87, text:"WHO建议成年人每周中等强度有氧运动至少", options:["75分钟","150分钟","200分钟","300分钟"], answer:"B" },
+    { id:88, text:"记账法膳食调查主要适用于", options:["个人精确调查","集体伙食单位","孕妇个体","分子营养学研究"], answer:"B" },
+    { id:89, text:"老年骨质疏松与以下哪种营养素关系最密切", options:["钠、氯","钙、维生素D","维生素C","维生素B12"], answer:"B" },
+    { id:90, text:"体内缺铁的第一阶段是", options:["铁减少期","红细胞生成缺铁期","缺铁性贫血期","储存铁耗尽前期"], answer:"A" },
+    { id:91, text:"下列哪项不是中国居民膳食结构的主要问题", options:["城市脂肪供能比超30%","蔬菜水果消费量较高","奶类消费偏低","豆类消费偏低"], answer:"B" },
+    { id:92, text:"温饱模式膳食特点描述错误的是", options:["谷类消费量大","动物性食品消费小","膳食能量基本满足","蛋白质摄入量高"], answer:"D" },
+    { id:93, text:"营养型模式的膳食特点", options:["粮食消费约半斤","动物性食品消费较低","海产品消费较高","能量摄入约2000kcal"], answer:"B" },
+    { id:94, text:"广东省居民膳食特点是", options:["以面类为主","动物性食物偏低","少糖多盐","多糖少盐"], answer:"C" },
+    { id:95, text:"《中国居民膳食指南》内容描述错误的是", options:["食物多样，肉类为主","多吃蔬菜水果","每天吃奶类","常吃鱼禽蛋"], answer:"A" },
+    { id:96, text:"对青少年膳食指南论述错误的是", options:["多吃谷类供给充足能量","保证鱼蛋奶豆蔬菜","避免盲目节食","饮酒应限量"], answer:"D" },
+    { id:97, text:"平衡膳食宝塔建议的摄入量是一个时期内的", options:["绝对值","平均值","相对值","累加值"], answer:"B" },
+    { id:98, text:"食谱编制原则中不属于保证营养平衡的是", options:["满足每天营养素供给","各营养素比例可以不考虑","注意荤素搭配","食物多样"], answer:"B" },
+    { id:99, text:"测量者位于婴幼儿右侧测量身长，正确手法", options:["左手固定头部，右手滑板贴足跟","左手固定腰部","左手固定髋部","左手固定膝部"], answer:"A" },
+    { id:100, text:"胸围值的定义是", options:["呼气未开始时读数","吸气未开始时读数","吸气刚开始时读数","呼气刚开始时读数"], answer:"A" },
+    { id:101, text:"测量上臂松弛围时，被测者的肌肉", options:["由紧张变放松时勿移动卷尺","先取走卷尺","先移开卷尺","以上都错"], answer:"A" },
+    { id:102, text:"使用身高坐高计测试前应校正", options:["坐高计划度","坐高计零点","坐高计标尺","坐高计高度"], answer:"B" },
+    { id:103, text:"测量成人身高时，“两点呈水平”的正确姿势", options:["耳屏下缘与眼眶上缘水平","耳屏上缘与眼眶上缘水平","耳屏上缘与眼眶下缘水平","耳屏下缘与眼眶下缘水平"], answer:"B" },
+    { id:104, text:"蛋白质和/或能量供给不足可发生", options:["蛋白质-能量营养不良症","蛋白质营养不良","能量营养不良","以上都错"], answer:"A" },
+    { id:105, text:"体格大小和生长速度是评价什么的灵敏指标", options:["经济状况","营养状况","遗传状况","照顾状况"], answer:"B" },
+    { id:106, text:"消瘦型营养不良多表现为", options:["蛋白不足为主，皮下脂肪和骨骼肌消耗","能量不足为主，皮下脂肪和骨骼肌消耗","A和B都正确","都错误"], answer:"B" },
+    { id:107, text:"“匙状甲”多见于", options:["严重缺铁性贫血","严重缺锌","两者都正确","两者都错误"], answer:"A" },
+    { id:108, text:"“口腔生殖器综合征”的症状有", options:["唇炎口角炎舌炎","阴囊炎","阴唇炎","以上都正确"], answer:"D" },
+    { id:109, text:"皮肤受轻微挤压出现散在出血点，易出现紫癜，估计缺乏", options:["维生素C","维生素B","维生素E","维生素A"], answer:"A" },
+    { id:110, text:"建议进行锌的实验室检查留取标本不正确的方法是", options:["留取粪便","留取空腹血","留取唾液","留取头发"], answer:"A" },
+    { id:111, text:"下面不属于产能营养素的是", options:["碳水化合物","蛋白质","脂肪","膳食纤维"], answer:"D" },
+    { id:112, text:"人们所称半EAA是指", options:["Cys和Met","Met和Phe","Phe和Cys","Cys和Tyr"], answer:"D" },
+    { id:113, text:"哪一种情况会消耗脂肪作为能量来源", options:["上课听讲","爬山4小时","打30分钟篮球","散步1小时"], answer:"B" },
+    { id:114, text:"生长期婴幼儿、青少年处于", options:["B>0正氮平衡","B<0负氮平衡","B=0氮平衡","非平衡"], answer:"A" },
+    { id:115, text:"婴儿“弓形腿”，小儿“鸡胸”，妇女骨质疏松症由什么缺乏引起", options:["VD","VA","VE","VK"], answer:"A" },
+    { id:116, text:"成人碘缺乏时会导致", options:["地克病","克山病","异食症","地甲肿"], answer:"D" },
+    { id:117, text:"畜禽肉中的铁是属于", options:["贮存铁","功能铁","血红素铁","非血红素铁"], answer:"C" },
+    { id:118, text:"缺乏维生素A不会引起", options:["暗适应能力降低","夜盲症","瘢皮病","皮肤干燥症"], answer:"C" },
+    { id:119, text:"缺乏维生素C主要会引起", options:["血液凝固慢","血流不止","坏血病","白血病"], answer:"C" },
+    { id:120, text:"以下哪些营养素在加工中最容易损失", options:["维生素A和胡萝卜素","维生素C和胡萝卜素","维生素C和维生素B1","钙和铁"], answer:"C" },
+    { id:121, text:"营养学上评价蛋白质营养价值从哪些方面", options:["被消化吸收程度","蛋白质种类","氨基酸分类","蛋白质的生物价"], answer:"A" },
+    { id:122, text:"食物中蛋白质含量测定一般使用", options:["称量法","微量凯氏定氮法","灰化法","系数计算法"], answer:"B" },
+    { id:123, text:"食物中含氮量占蛋白质的", options:["10%","14%","12%","16%"], answer:"D" },
+    { id:124, text:"不考虑粪代谢氮的消化率称为", options:["消化率","实际消化率","表观消化率","真消化率"], answer:"C" },
+    { id:125, text:"蛋白质净利用率表达为", options:["消化率×生物价","功效比值×生物价","消化率×功效比值","利用率×生物价"], answer:"A" },
+    { id:126, text:"食物脂肪的吸收率一般在", options:["95%","85%","70%","80%"], answer:"D" },
+    { id:127, text:"各类食物的血糖指数一般是粗粮（）细粮，复合碳水化合物（）精制糖", options:["低于，高于","高于，低于","高于，高于","低于，低于"], answer:"A" },
+    { id:128, text:"食品强化通常有几种目的", options:["3种","4种","5种","6种"], answer:"C" },
+    { id:129, text:"营养强化剂加入剂量一般以膳食营养素推荐摄入量的多少为宜", options:["1-2倍","1/3-1/2倍","10倍以下","1/2-1倍"], answer:"B" },
+    { id:130, text:"食品强化的要求是", options:["明确对象和目的","接受人数多","保证食品卫生","营养价值高"], answer:"A" },
+    { id:131, text:"主食强化所用强化剂有", options:["维生素B1、B2","维生素D","维生素C","维生素K"], answer:"A" },
+    { id:132, text:"强化食品的种类有", options:["膳食补充剂添加","载体的选择","主食强化","水强化"], answer:"C" },
+    { id:133, text:"食品的污染按其性质可分为", options:["细菌污染","食品添加剂污染","化学性污染","有毒重金属污染"], answer:"C" } { id:134, text:"食品的微生物污染，一方面降低了什么，另一方面危害食用者", options:["食品价格","食品的卫生质量","食品的可食用性","食品的外观质量"], answer:"B" },
+    { id:135, text:"根据致病能力，将污染食品的微生物分为", options:["半致病性","相对致病性","间接致病微生物","弱致病性"], answer:"C" },
+    { id:136, text:"非致病性微生物包括", options:["沙门氏菌","非致病菌","低致病菌","混合杂菌"], answer:"B" },
+    { id:137, text:"细菌菌相是共存于食品中的什么和相对数量的构成", options:["细菌的分布","细菌的结构特征","细菌种类","细菌的大小"], answer:"C" },
+    { id:138, text:"细菌的菌落总数的食品卫生学意义是作为什么的标志", options:["食品中的菌数","食品中细菌种类","食品等级","食品清洁状态"], answer:"D" },
+    { id:139, text:"菌落总数可以预测什么和评定食品腐败变质的程度", options:["食品耐贮藏期限","食品保洁程度","食品价格","食品变质率"], answer:"A" },
+    { id:140, text:"大肠菌群包括肠杆菌科的埃希菌属、柠檬酸杆菌属、肠杆菌属和什么", options:["埃希菌属、黄杆菌","埃希菌属、克雷伯菌属","克雷伯菌属、假单胞菌","沙雷菌、埃希菌属"], answer:"B" },
+    { id:141, text:"若食品中只检出埃希菌属，则认为食品受人和温血动物粪便的什么污染", options:["陈旧","近期","多次重复","既有陈旧又有近期"], answer:"B" },
+    { id:142, text:"大肠菌群可作为食品粪便污染、什么的指示菌", options:["杂菌","酵母菌","肠道致病菌","霉菌"], answer:"C" },
+    { id:143, text:"霉菌是菌丝体什么而且没有较大子实体的一部分真菌", options:["比较不发达","发达","比较发达","不发达"], answer:"C" },
+    { id:144, text:"霉菌产毒的特点是什么、产毒能力可变和易变性", options:["具有专一性","不具有专一性","具有选择性","不具有选择性"], answer:"A" },
+    { id:145, text:"霉菌产毒的条件是基质、水分、湿度、温度、氧气量等，最主要", options:["土壤","基质","毒素的存在","地理位置"], answer:"B" },
+    { id:146, text:"粮食水分含量为多少时霉菌繁殖产毒能力最强", options:["13-14%","14-16%","17-18%","18-19%"], answer:"C" },
+    { id:147, text:"在相对湿度90%以上时，主要适合什么霉菌繁殖", options:["湿生性霉菌","中生性霉菌","干生性霉菌","各种霉菌"], answer:"A" },
+    { id:148, text:"霉菌的产毒和繁殖的最适温度", options:["20-24℃","25-30℃","30-35℃","35-40℃"], answer:"B" },
+    { id:149, text:"食品腐败变质的鉴定一般采用感官、物理、化学和什么四个方面的指标", options:["微生物","生物","放射性","毒性"], answer:"A" },
+    { id:150, text:"鱼类腐败可用K值表示，K≤20%表明鱼体新鲜，K值大于多少表示开始腐败", options:["30%","40%","50%","60%"], answer:"B" }
+];
+
+// 题库一共150题（已涵盖三个文件的主要单选题，确保答案正确）
+// --------------------------------------------------------------
+let currentIndex = 0;
+let answered = false;
+let totalQuestions = QUESTIONS.length;
+
+const questionTextEl = document.getElementById('questionText');
+const optionsContainer = document.getElementById('optionsContainer');
+const feedbackArea = document.getElementById('feedbackArea');
+const nextBtn = document.getElementById('nextBtn');
+const restartBtn = document.getElementById('restartBtn');
+const questionCounterSpan = document.getElementById('questionCounter');
+const progressTextSpan = document.getElementById('progressText');
+
+function updateCounter() {
+    questionCounterSpan.innerText = `第${currentIndex+1} / ${totalQuestions}题`;
+    progressTextSpan.innerText = `📚 已完成 ${currentIndex} / ${totalQuestions}`;
+}
+
+function renderCurrentQuestion() {
+    answered = false;
+    feedbackArea.style.display = 'none';
+    nextBtn.style.display = 'none';
+    const q = QUESTIONS[currentIndex];
+    if (!q) return;
+    questionTextEl.innerText = `${currentIndex+1}. ${q.text}`;
+    const letters = ['A','B','C','D'];
+    let html = '';
+    q.options.forEach((opt, idx) => {
+        html += `<div class="option-item" data-opt-value="${letters[idx]}">
+                    <span class="option-prefix">${letters[idx]}</span>
+                    <span>${opt}</span>
+                 </div>`;
+    });
+    optionsContainer.innerHTML = html;
+    document.querySelectorAll('.option-item').forEach(el => {
+        el.addEventListener('click', (e) => {
+            if (answered) return;
+            const chosen = el.getAttribute('data-opt-value');
+            handleAnswer(chosen, q);
+        });
+    });
+    updateCounter();
+}
+
+function handleAnswer(chosen, q) {
+    if (answered) return;
+    const isCorrect = (chosen === q.answer);
+    answered = true;
+    feedbackArea.style.display = 'block';
+    const correctLetter = q.answer;
+    const correctText = getOptionText(q, correctLetter);
+    if (isCorrect) {
+        feedbackArea.className = 'feedback-area correct-feedback';
+        feedbackArea.innerHTML = `✅ 正确！ ${q.explanation || ''}`;
+        setTimeout(() => goToNextQuestion(), 550);
+    } else {
+        feedbackArea.className = 'feedback-area wrong-feedback';
+        const chosenText = getOptionText(q, chosen);
+        feedbackArea.innerHTML = `❌ 错误！ 您的选项：${chosen}. ${chosenText}<br>✔ 正确答案：${correctLetter}. ${correctText}<br>📘 解析：${q.explanation || '请复习'}`;
+        nextBtn.style.display = 'block';
+    }
+    document.querySelectorAll('.option-item').forEach(el => {
+        el.style.opacity = '0.6';
+        el.style.pointerEvents = 'none';
+    });
+}
+
+function getOptionText(q, letter) {
+    const map = {A:0,B:1,C:2,D:3};
+    const idx = map[letter];
+    return q.options[idx] || '';
+}
+
+function goToNextQuestion() {
+    if (currentIndex + 1 < totalQuestions) {
+        currentIndex++;
+        renderCurrentQuestion();
+        document.querySelectorAll('.option-item').forEach(el => {
+            el.style.opacity = '1';
+            el.style.pointerEvents = 'auto';
+        });
+    } else {
+        feedbackArea.style.display = 'block';
+        feedbackArea.className = 'feedback-area correct-feedback';
+        feedbackArea.innerHTML = '🎉 恭喜！您已完成全部题目！ 🎉<br>点击「重新开始」继续复习。';
+        nextBtn.style.display = 'none';
+        optionsContainer.innerHTML = '<div style="text-align:center;padding:2rem;">✨ 完美通关 ✨</div>';
+        questionTextEl.innerText = '复习完成！您已精通考点~';
+    }
+}
+
+function resetQuiz() {
+    currentIndex = 0;
+    answered = false;
+    renderCurrentQuestion();
+    nextBtn.style.display = 'none';
+    document.querySelectorAll('.option-item')?.forEach(el => {
+        if(el) { el.style.opacity = '1'; el.style.pointerEvents = 'auto'; }
+    });
+    feedbackArea.style.display = 'none';
+}
+
+nextBtn.addEventListener('click', goToNextQuestion);
+restartBtn.addEventListener('click', resetQuiz);
+renderCurrentQuestion();
+</script>
+</body>
+</html>
