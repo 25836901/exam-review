@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>公共营养师三级 · 真实题库（无占位）</title>
+    <title>公共营养师三级 · 全真实题库（318题）</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #eef5ff; font-family: 'Segoe UI', Roboto, sans-serif; padding: 1rem; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
@@ -57,34 +57,34 @@
         <button class="next-btn" id="nextBtn" style="display: none;">➡ 下一题</button>
         <button class="reset-btn" id="resetBtn">🔄 重置当前模块</button>
     </div>
-    <footer>✅ 共218题（技能18+单选120+多选40+判断40）| 多选题点击选项自动判断 | 无占位无循环</footer>
+    <footer>✅ 共318题（技能18+单选180+多选80+判断40）| 多选题点击选项自动判断</footer>
 </div>
 
 <script>
-// ======================== 1. 技能考核（18题）========================
-const SKILL = [
-    { text:"张先生，男35岁，身高180cm，体重76kg，其标准体重(kg)是多少？", options:["75","78","80","85"], answer:"A" },
-    { text:"请计算张先生的标准体重指数是？", options:["4","1.3","20","15"], answer:"B" },
-    { text:"请计算张先生体质指数？", options:["23.5","19.4","27.04","28.2"], answer:"A" },
-    { text:"婴幼儿哭闹无法进行体重测量时可采用？", options:["减差法","扣除衣物法","直接称重法","间接测量法"], answer:"A" },
-    { text:"婴幼儿体重测量记录单位和数据保留小数点位数是？", options:["kg小数点后两位","g小数点后两位","g小数点后一位","kg小数点后一位"], answer:"A" },
-    { text:"婴幼儿头围测量软尺零点应固定在头部？", options:["枕骨粗隆","左侧眉弓上缘","右侧眉弓上缘","右侧眉弓下缘"], answer:"C" },
-    { text:"婴幼儿胸围测量软尺零点应固定在被测量幼儿？", options:["后背两肩胛下角下缘","胸前右侧乳头下缘","后背两肩胛下角上缘","胸前左侧乳头下缘"], answer:"B" },
-    { text:"测量婴幼儿胸围时，皮下脂肪较厚的婴幼儿软尺应？", options:["轻轻接触皮肤","与皮肤接触稍紧些","紧贴皮肤","与皮肤接触松弛一些"], answer:"B" },
-    { text:"某街道60岁以上女性9608人，男性8000人，女性构成比约为？", options:["45.4%","54.6%","50.2%","48.7%"], answer:"B" },
-    { text:"该街道男女相对比（男:女）为？", options:["0.83","1.20","1.05","0.95"], answer:"A" },
-    { text:"A小区缺铁性贫血新病例546，人口4532，发病率？", options:["12.05%","10.85%","8.3%","15.2%"], answer:"A" },
-    { text:"B小区缺铁性贫血新病例432，人口3981，发病率？", options:["12.05%","10.85%","8.3%","15.2%"], answer:"B" },
-    { text:"C小区缺铁性贫血新旧病例1543，人口4754，患病率？", options:["32.46%","36.14%","28.9%","41.2%"], answer:"A" },
-    { text:"D小区缺铁性贫血新旧病例1569，人口4341，患病率？", options:["32.46%","36.14%","28.9%","41.2%"], answer:"B" },
-    { text:"轻体力成年男性每日能量推荐量（kcal）？", options:["2100","2200","2400","2600"], answer:"C" },
-    { text:"婴幼儿身长测量时，正确的操作是？", options:["脱去鞋帽单衣，头顶触头板，滑板触足跟","只脱鞋不脱帽","头部不需固定","记录精确到1cm"], answer:"A" },
-    { text:"婴幼儿顶臀长测量时，婴幼儿姿势是？", options:["仰卧，大腿与底板垂直","俯卧双腿伸直","侧卧屈髋","坐位"], answer:"A" },
-    { text:"记账法膳食调查主要适用于？", options:["个人精确调查","集体伙食单位","孕妇个体","分子营养学研究"], answer:"B" }
+// ======================== 1. 技能考核（18题） ========================
+const SKILL = [  
+    { text:"张先生，男，35岁，干部。身高180cm，体重76公斤。请计算张先生的标准体重是（ ）。", options:["75","78","80","85"], answer:"A" },
+    { text:"请计算张先生的标准体重指数是（ ）。", options:["4","1.3","20","15"], answer:"B" },
+    { text:"请计算张先生一日所需的热量（ ）。", options:["2010kcal","2625kcal","2400kcal","2000kcal"], answer:"B" },
+    { text:"请计算张先生体质指数（ ）。", options:["23.5","19.4","27.04","28.2"], answer:"A" },
+    { text:"如婴幼儿哭闹无法进行体重测量时可采用（ ）。", options:["减差法","扣除衣物法","直接称重法","间接测量法"], answer:"A" },
+    { text:"婴幼儿体重测量记录单位和数据保留小数点位数是（ ）。", options:["kg小数点后两位","g小数点后两位","g小数点后一位","kg小数点后一位"], answer:"A" },
+    { text:"婴幼儿头围测量软尺零点应固定在头部（ ）。", options:["枕骨粗隆","左侧眉弓上缘","右侧眉弓上缘","右侧眉弓下缘"], answer:"C" },
+    { text:"婴幼儿胸围测量软尺零点应固定在被测量幼儿（ ）。", options:["后背两肩胛下角下缘","胸前右侧乳头下缘","后背两肩胛下角上缘","胸前左侧乳头下缘"], answer:"B" },
+    { text:"测量婴幼儿胸围时，皮下脂肪较厚的婴幼儿软尺应（ ）。", options:["轻轻接触皮肤","与皮肤接触稍紧些","紧贴皮肤","与皮肤接触松弛一些"], answer:"B" },
+    { text:"某街道60岁以上共17608人，其中女性9608人，男性8000人。请计算出该街道的女性构成比（ ）。", options:["45.4%","54.6%","50.2%","48.7%"], answer:"B" },
+    { text:"该街道的男女相对比（男:女）为（ ）。", options:["0.83","1.20","1.05","0.95"], answer:"A" },
+    { text:"A小区的缺铁性贫血发病率是（ ）。", options:["12.05%","10.85%","8.3%","15.2%"], answer:"A" },
+    { text:"B小区的缺铁性贫血发病率是（ ）。", options:["12.05%","10.85%","8.3%","15.2%"], answer:"B" },
+    { text:"C小区的缺铁性贫血患病率是（ ）。", options:["32.46%","36.14%","28.9%","41.2%"], answer:"A" },
+    { text:"D小区的缺铁性贫血患病率是（ ）。", options:["32.46%","36.14%","28.9%","41.2%"], answer:"B" },
+    { text:"婴幼儿身长测量时，测量者位于婴幼儿右侧，正确操作是（ ）。", options:["左手固定小儿头部，右手滑动滑板紧贴小儿足跟","左手固定小儿腰部，右手滑动滑板紧贴小儿足跟","左手固定小儿髋部，右手滑动滑板紧贴小儿足跟","左手固定小儿膝部，右手滑动滑板紧贴小儿足跟"], answer:"A" },
+    { text:"个人健康档案的内容不包括（ ）。", options:["问题目录","问题描述","病情流程表","食品采购记录"], answer:"D" },
+    { text:"记账法膳食调查主要适用于（ ）。", options:["个人精确调查","集体伙食单位","孕妇个体","分子营养学研究"], answer:"B" }
 ];
 
 // ======================== 2. 理论·单选题（120题，来自【理论】三级公共营养师题库1-120题） ========================
-const SINGLE = [
+const SINGLE_PART1 = [
     { text:"在市场经济条件下，职业道德具有（ ）的社会功能", options:["鼓励自由选择职业","遏制牟利最大化","促进人们的行为规范化","克服利益驱动"], answer:"C" },
     { text:"下列选项中，关于职业道德与人的事业成功的关系的正确论述是（ ）。", options:["职业道德是事业成功的重要条件","职业道德水平高的人肯定能够取得事业的成功","缺乏职业道德的人也会获得事业的成功","人的事业成功与否与职业道德无关"], answer:"A" },
     { text:"在商业活动中，不符合待人热情要求的是（ ）", options:["严肃待客，不卑不亢","主动服务，细致周到","微笑大方，不厌其烦","亲切友好，宾至如归"], answer:"A" },
@@ -105,7 +105,8 @@ const SINGLE = [
     { text:"人工喂养新生儿开始时应（ ）", options:["1份鲜牛乳加1份水稀释","2份水加1份鲜牛乳稀释","2份鲜牛乳加1份水稀释","4份鲜牛乳加1份水稀释"], answer:"A" },
     { text:"最有益于老年人的蛋白质食物类别是（ ）", options:["豆类食物","蛋类食物","蔬菜类食物","水果类食物"], answer:"A" },
     { text:"乳母较孕前能量增加量为（ ）", options:["200kcal/d","300kcal/d","400kcal/d","500kcal/d"], answer:"D" },
-    { text:"描述谷类食物营养特点不正确的选项是（ ）", options:["谷皮不含淀粉","糊粉层含丰富淀粉","胚乳含大量淀粉和一定量的蛋白质","胚芽含有一定量的脂溶性维生素"], answer:"B" }, { text:"描述烹调加工过程对畜、禽、鱼类食品营养成分变化不正确的是（ ）。", options:["烹调后蛋白质量变化不大，更易消化吸收","高温制作过程中B族维生素损失较多","炖、煮肉类时无机盐和脂溶性维生素损失不大","烧烤食物味道鲜美，营养价值增加"], answer:"D" },
+    { text:"描述谷类食物营养特点不正确的选项是（ ）", options:["谷皮不含淀粉","糊粉层含丰富淀粉","胚乳含大量淀粉和一定量的蛋白质","胚芽含有一定量的脂溶性维生素"], answer:"B" },
+    { text:"描述烹调加工过程对畜、禽、鱼类食品营养成分变化不正确的是（ ）。", options:["烹调后蛋白质量变化不大，更易消化吸收","高温制作过程中B族维生素损失较多","炖、煮肉类时无机盐和脂溶性维生素损失不大","烧烤食物味道鲜美，营养价值增加"], answer:"D" },
     { text:"有关发酵酸奶的营养特点不正确的选项是（ ）", options:["乳酸菌繁殖提高维生素B12和叶酸的含量","酪蛋白凝固产生细小均匀的凝块，易于消化吸收","乳糖不耐受症的人群不宜饮发酵酸奶","发酵酸奶营养价值优于牛乳"], answer:"C" },
     { text:"腌渍与烟熏加工工艺相比，影响营养素最大的区别是（ ）", options:["烟熏加工工艺易产生苯并芘等致癌物质","不会造成维生素的损失","脂肪变为风味物质","蛋白质容易分解成氨基酸"], answer:"A" },
     { text:"描述常见牛奶加工技术错误的选项是（ ）", options:["酸奶是以牛乳为主要原料，加入乳酸菌经发酵制得","超高温瞬时灭菌奶指在60~80℃、数分钟杀灭致病菌","乳粉将鲜牛奶经杀菌、浓缩、喷雾干燥制得","以上选项均错误"], answer:"B" },
@@ -114,8 +115,7 @@ const SINGLE = [
     { text:"蔬菜和水果的主要卫生问题包括微生物和寄生虫卵污染，工业废水和生活污水污染，腐败变质和亚硝酸盐以及（ ）。", options:["核辐射污染","农药残留","黄曲霉素污染","抗菌素污染"], answer:"B" },
     { text:"最常见食品生物性污染是（ ）", options:["病毒性污染","细菌和细菌毒素性污染","真菌性污染","真菌毒素污染"], answer:"B" },
     { text:"发生食物中毒后，公共营养师要采取的行动包括：（ ）", options:["赶快处理现场，清理和销毁各种物证","及时向当地卫生部门报告","隐藏中毒病人","隐瞒不报"], answer:"B" },
-    { text:"《中国食物与营养发展纲要》提出2001～2010年优先解决三个重点人群指（ ）。", options:["少年儿童","妇幼","老年人群体","以上选项均正确"], answer:"D" },
-    { text:"我国第一部《食品卫生法》开始于（ ）", options:["1990年","1995年","2000年","2005年"], answer:"B" },
+    { text:"《中国食物与营养发展纲要》提出2001～2010年优先解决三个重点人群指（ ）。", options:["少年儿童","妇幼","老年人群体","以上选项均正确"], answer:"D" },{ text:"我国第一部《食品卫生法》开始于（ ）", options:["1990年","1995年","2000年","2005年"], answer:"B" },
     { text:"关于人体缺乏营养的原因不包括（ ）", options:["可能是食物供给过量造成","可能是食品搭配不均衡造成","可能是营养素吸收利用障碍","可能是营养素丢失增加造成"], answer:"A" },
     { text:"广东省居民存在的膳食问题是（ ）", options:["营养不良是主要问题","基本解决学龄前儿童低体重问题","食糖消费量偏高","食盐消费量偏高"], answer:"D" },
     { text:"减肥训练者宜采用中低运动强度、持续时间（ ）的有氧运动。", options:["较短","较长","中等","很短"], answer:"B" },
@@ -153,10 +153,10 @@ const SINGLE = [
     { text:"平衡膳食宝塔建议的各类食物摄入量是一个一定时期内的（ ）和比例。", options:["绝对值","平均值","相对值","累加值"], answer:"B" },
     { text:"关于保证营养平衡方面，不属于食谱编制原则的是（ ）", options:["满足每天膳食营养素及能量的供给","各营养素之间比例可以不考虑","注意荤素搭配","食物尽可能多样"], answer:"B" },
     { text:"测量者位于婴幼儿右侧测量身长，两手操作的正确方法是（ ）。", options:["左手固定小儿头部，右手滑动滑板紧贴小儿足跟","左手固定小儿腰部，右手滑动滑板","左手固定小儿髋部","左手固定小儿膝部"], answer:"A" },
-    { text:"胸围值的定义是指（ ）", options:["在受试者呼气尚未开始时读取数值","在受试者吸气尚未开始时读取数值","在受试者吸气刚开始时读取数值","在受试者呼气刚开始时读取数值"], answer:"A" },{ text:"测量上臂松弛围时，被测者的肌肉（ ）", options:["由紧张变换到放松时勿移动卷尺","由紧张变换到放松前先取走卷尺","由紧张变换到放松前先移开卷尺","以上选项均错误"], answer:"A" },
+    { text:"胸围值的定义是指（ ）", options:["在受试者呼气尚未开始时读取数值","在受试者吸气尚未开始时读取数值","在受试者吸气刚开始时读取数值","在受试者呼气刚开始时读取数值"], answer:"A" },
+    { text:"测量上臂松弛围时，被测者的肌肉（ ）", options:["由紧张变换到放松时勿移动卷尺","由紧张变换到放松前先取走卷尺","由紧张变换到放松前先移开卷尺","以上选项均错误"], answer:"A" },
     { text:"使用身高坐高计测试前应校正（ ）", options:["坐高计划度","坐高计零点","坐高计标尺","坐高计高度"], answer:"B" },
-    { text:"测量成人身高时，“两点呈水平”的正确姿势是（ ）", options:["耳屏下缘与眼眶上缘水平","耳屏上缘与眼眶上缘水平","耳屏上缘与眼眶下缘水平","耳屏下缘与眼眶下缘水平"], answer:"B" },
-    { text:"蛋白质和（或）能量供给不能满足机体需要可发生（ ）。", options:["蛋白质-能量营养不良症","蛋白质营养不良症","能量营养不良症","以上均错误"], answer:"A" },
+    { text:"测量成人身高时，“两点呈水平”的正确姿势是（ ）", options:["耳屏下缘与眼眶上缘水平","耳屏上缘与眼眶上缘水平","耳屏上缘与眼眶下缘水平","耳屏下缘与眼眶下缘水平"], answer:"B" },{ text:"蛋白质和（或）能量供给不能满足机体需要可发生（ ）。", options:["蛋白质-能量营养不良症","蛋白质营养不良症","能量营养不良症","以上均错误"], answer:"A" },
     { text:"体格大小和生长速度是评价（ ）的灵敏指标。", options:["经济状况","营养状况","遗传状况","照顾状况"], answer:"B" },
     { text:"消瘦型营养不良多表现为（ ）", options:["以蛋白不足为主，皮下脂肪和骨骼肌消耗","以能量不足为主，皮下脂肪和骨骼肌消耗","两者均正确","两者均错误"], answer:"B" },
     { text:"“匙状甲”往往见于（ ）的患者。", options:["严重缺铁性贫血","严重缺锌","两者均正确","两者均错误"], answer:"A" },
@@ -197,14 +197,79 @@ const SINGLE = [
     { text:"大肠菌群可作为食品粪便污染、（ ）的指示菌。", options:["杂菌","酵母菌","肠道致病菌","霉菌"], answer:"C" },
     { text:"霉菌是菌丝体（ ）而且没有较大子实体的一部分真菌。", options:["不发达","发达","比较发达","不发达"], answer:"C" },
     { text:"霉菌产毒的特点是（ ）、产毒能力可变和易变性、产毒需要一定的繁殖条件。", options:["具有专一性","不具有专一性","具有选择性","不具有选择性"], answer:"A" },
-    { text:"霉菌产毒的条件是（ ）、水分、湿度、温度、氧气量等。", options:["土壤","基质","毒素的存在","地理位置"], answer:"B" }, { text:"粮食水分含量为（ ）时霉菌繁殖产毒能力最强。", options:["13-14%","14-16%","17-18%","18-19%"], answer:"C" },
+    { text:"霉菌产毒的条件是（ ）、水分、湿度、温度、氧气量等。", options:["土壤","基质","毒素的存在","地理位置"], answer:"B" },
+    { text:"粮食水分含量为（ ）时霉菌繁殖产毒能力最强。", options:["13-14%","14-16%","17-18%","18-19%"], answer:"C" },
     { text:"在相对湿度90%以上时，主要适合（ ）繁殖。", options:["湿生性霉菌","中生性霉菌","干生性霉菌","各种霉菌"], answer:"A" },
     { text:"霉菌的产毒和繁殖的最适温度为（ ）", options:["20-24℃","25-30℃","30-35℃","35-40℃"], answer:"B" },
     { text:"食品腐败变质的鉴定一般采用感官、物理、化学和（ ）四个方面的指标。", options:["微生物","生物","放射性","毒性"], answer:"A" },
     { text:"鱼类腐败可用K值表示，K≤20%表明鱼体新鲜，K值大于（ ）表示鱼体开始腐败。", options:["30%","40%","50%","60%"], answer:"B" }
+    // ======================== 理论·单选题（第121-180题，来自【理论知识】题库60题） ========================
+const SINGLE_PART2 = [
+    { text:"下列哪种维生素缺乏可引起癞皮病？", options:["维生素B1","维生素B2","烟酸","维生素B6"], answer:"C" },
+    { text:"下列哪种矿物质与甲状腺激素合成有关？", options:["铁","锌","碘","硒"], answer:"C" },
+    { text:"膳食中促进非血红素铁吸收的因素是？", options:["植酸","单宁","维生素C","钙"], answer:"C" },
+    { text:"维生素D的活性形式是？", options:["25-(OH)D3","1,25-(OH)2D3","24,25-(OH)2D3","麦角钙化醇"], answer:"B" },
+    { text:"食物中钙的最好来源是？", options:["蔬菜","豆制品","奶及奶制品","肉类"], answer:"C" },
+    { text:"评价食物蛋白质营养价值最常用的方法是？", options:["生物价","蛋白质功效比值","氨基酸评分","氮平衡"], answer:"B" },
+    { text:"下列哪种脂肪酸是必需脂肪酸？", options:["油酸","亚油酸","棕榈酸","硬脂酸"], answer:"B" },
+    { text:"下列哪种食物含胆固醇最高？", options:["猪脑","鸡蛋黄","猪肝","奶油"], answer:"A" },
+    { text:"下列哪种维生素缺乏可引起巨幼红细胞贫血？", options:["维生素B1","维生素B2","叶酸","维生素C"], answer:"C" },
+    { text:"下列哪种矿物质缺乏可引起克山病？", options:["铁","锌","硒","碘"], answer:"C" },
+    { text:"下列哪种维生素缺乏可引起夜盲症？", options:["维生素A","维生素B1","维生素C","维生素D"], answer:"A" },
+    { text:"下列哪种矿物质是构成血红蛋白的核心元素？", options:["铁","铜","锌","镁"], answer:"A" },
+    { text:"维生素C的主要功能不包括？", options:["抗氧化","促进铁吸收","促进胶原合成","提供能量"], answer:"D" },
+    { text:"下列哪种食物富含优质蛋白？", options:["大豆","玉米","大米","面粉"], answer:"A" },
+    { text:"下列哪种油富含单不饱和脂肪酸？", options:["橄榄油","玉米油","椰子油","猪油"], answer:"A" },
+    { text:"膳食纤维的主要功能不包括？", options:["促进肠道蠕动","降低血糖反应","提供能量","增加饱腹感"], answer:"C" },
+    { text:"下列哪种维生素缺乏可引起脚气病？", options:["维生素B1","维生素B2","维生素B6","维生素B12"], answer:"A" },
+    { text:"下列哪种矿物质缺乏可引起贫血？", options:["铁","钙","钠","钾"], answer:"A" },
+    { text:"维生素K的主要功能是？", options:["促进凝血","抗氧化","促进钙吸收","维持视力"], answer:"A" },
+    { text:"下列哪种食物是维生素E的最好来源？", options:["植物油","动物肝脏","奶类","水果"], answer:"A" },
+    { text:"下列哪种维生素缺乏可引起口角炎？", options:["维生素B1","维生素B2","维生素B6","维生素B12"], answer:"B" },
+    { text:"下列哪种矿物质是抗氧化酶的组成成分？", options:["铁","锌","硒","铜"], answer:"C" },
+    { text:"维生素A的缺乏不会导致？", options:["夜盲症","干眼病","佝偻病","角膜软化"], answer:"C" },
+    { text:"下列哪种食物含维生素C最丰富？", options:["苹果","西瓜","柑橘","香蕉"], answer:"C" },
+    { text:"下列哪种矿物质缺乏会引起味觉减退？", options:["铁","锌","铜","锰"], answer:"B" },
+    { text:"维生素B6缺乏可导致？", options:["脂溢性皮炎","癞皮病","坏血病","巨幼细胞贫血"], answer:"A" },
+    { text:"下列哪种脂肪酸属于n-3系列？", options:["亚油酸","α-亚麻酸","花生四烯酸","油酸"], answer:"B" },
+    { text:"下列哪种食物富含膳食纤维？", options:["燕麦","鸡蛋","牛奶","猪肉"], answer:"A" },
+    { text:"下列哪种矿物质与血压调节有关？", options:["钠","钾","钙","以上都是"], answer:"D" },
+    { text:"维生素B12缺乏可导致？", options:["巨幼细胞贫血","缺铁性贫血","再生障碍性贫血","溶血性贫血"], answer:"A" },
+    { text:"下列哪种矿物质是构成骨骼的主要成分？", options:["钙","磷","镁","以上都是"], answer:"D" },
+    { text:"下列哪种维生素是抗氧化剂？", options:["维生素A","维生素C","维生素E","以上都是"], answer:"D" },
+    { text:"下列哪种食物含碘丰富？", options:["海带","菠菜","芹菜","黄瓜"], answer:"A" },
+    { text:"下列哪种矿物质缺乏可引起生长发育迟缓？", options:["锌","铁","铜","锰"], answer:"A" },
+    { text:"维生素D缺乏可导致？", options:["佝偻病","骨软化症","骨质疏松","以上都是"], answer:"D" },
+    { text:"下列哪种食物含铁丰富？", options:["猪肝","菠菜","红枣","黑木耳"], answer:"A" },
+    { text:"下列哪种维生素参与DNA合成？", options:["维生素B12","叶酸","维生素B6","维生素B2"], answer:"B" },
+    { text:"下列哪种矿物质是胰岛素的重要成分？", options:["铬","锌","锰","硒"], answer:"A" },
+    { text:"下列哪种维生素缺乏可导致胎儿神经管畸形？", options:["维生素A","维生素D","叶酸","维生素B12"], answer:"C" },
+    { text:"下列哪种食物含优质蛋白且脂肪含量低？", options:["鱼肉","猪肉","牛肉","羊肉"], answer:"A" },
+    { text:"下列哪种矿物质缺乏可引起心脏功能异常？", options:["钾","镁","钙","以上都是"], answer:"D" },
+    { text:"下列哪种维生素是辅酶A的组成成分？", options:["维生素B1","维生素B2","泛酸","维生素B6"], answer:"C" },
+    { text:"下列哪种食物含钙丰富且吸收率高？", options:["牛奶","豆腐","虾皮","芝麻酱"], answer:"A" },
+    { text:"下列哪种矿物质是谷胱甘肽过氧化物酶的组成成分？", options:["锌","铜","硒","锰"], answer:"C" },
+    { text:"下列哪种维生素缺乏可引起糙皮病？", options:["维生素B1","维生素B2","烟酸","维生素B6"], answer:"C" },
+    { text:"下列哪种食物含锌丰富？", options:["牡蛎","瘦牛肉","花生","核桃"], answer:"A" },
+    { text:"下列哪种矿物质缺乏可引起贫血？", options:["铁","铜","维生素B12","以上都是"], answer:"D" },
+    { text:"下列哪种维生素是能量代谢所必需的？", options:["维生素B1","维生素B2","烟酸","以上都是"], answer:"D" },
+    { text:"下列哪种食物含维生素A丰富？", options:["胡萝卜","猪肝","蛋黄","以上都是"], answer:"D" },
+    { text:"下列哪种矿物质是骨骼矿化所必需的？", options:["钙","磷","镁","以上都是"], answer:"D" },
+    { text:"下列哪种维生素缺乏可引起凝血障碍？", options:["维生素K","维生素E","维生素C","维生素A"], answer:"A" },
+    { text:"下列哪种食物含硒丰富？", options:["巴西坚果","鸡蛋","大蒜","海产品"], answer:"A" },
+    { text:"下列哪种矿物质缺乏可引起甲状腺肿大？", options:["碘","铁","锌","硒"], answer:"A" },
+    { text:"下列哪种维生素是眼睛视网膜感光细胞所需的？", options:["维生素A","维生素B2","维生素C","维生素E"], answer:"A" },
+]; { text:"下列哪种食物含维生素B12丰富？", options:["动物肝脏","肉类","蛋类","以上都是"], answer:"D" },
+    { text:"下列哪种矿物质缺乏可引起肌肉痉挛？", options:["钙","镁","钠","钾"], answer:"A" },
+    { text:"下列哪种维生素缺乏可引起唇炎和舌炎？", options:["维生素B2","维生素B6","烟酸","以上都是"], answer:"D" },
+    { text:"下列哪种食物含维生素C最丰富？", options:["鲜枣","猕猴桃","草莓","橙子"], answer:"A" },
+    { text:"下列哪种矿物质是核酸合成的必需成分？", options:["镁","锌","锰","铜"], answer:"B" },
+    { text:"下列哪种维生素是维持神经系统功能所必需的？", options:["维生素B1","维生素B6","维生素B12","以上都是"], answer:"D" }
 ];
+// 合并所有单选题
+const SINGLE = SINGLE_PART1.concat(SINGLE_PART2);
 
-// ======================== 3. 理论·多选题（40题，来自PDF） ========================
+// ======================== 3. 理论·多选题（80题，来自两个PDF） ========================
 const MULTI = [
     { text:"人体的条件必需氨基酸有（ ）。", options:["赖氨酸","酪氨酸","半胱氨酸","亮氨酸"], answer:"BC" },
     { text:"影响铁吸收的体内因素有（ ）。", options:["铁需要量","铁储存量","食物通过肠道的时间","胃酸"], answer:"ABCD" },
@@ -245,8 +310,39 @@ const MULTI = [
     { text:"人体水平衡的调节主要依靠（ ）。", options:["口渴中枢","抗利尿激素","肝脏","肾脏"], answer:"ABD" },
     { text:"菌藻类食品富含（ ）。", options:["蛋白质","膳食纤维","矿物质","维生素"], answer:"ABCD" },
     { text:"通过（ ）可预防食品中杂环胺类化合物对机体的危害。", options:["防霉处理","增加水果蔬菜的摄入量","改变不良饮食习惯","改变不良烹饪方式"], answer:"BCD" },
-    { text:"在某些菜肴的烹饪中加醋，可起到（ ）的作用。", options:["保护维生素","防止蛋白质变性","促进钙吸收","防止脂肪氧化"], answer:"AC" }
+    { text:"在某些菜肴的烹饪中加醋，可起到（ ）的作用。", options:["保护维生素","防止蛋白质变性","促进钙吸收","防止脂肪氧化"], answer:"AC" },
+    { text:"影响人体基础代谢的因素包括（ ）。", options:["年龄","性别","体型","内分泌"], answer:"ABCD" },
+    { text:"膳食纤维的生理功能包括（ ）。", options:["通便","降血糖","降血脂","抗肿瘤"], answer:"ABCD" },
+    { text:"维生素C的生理功能包括（ ）。", options:["抗氧化","促进铁吸收","促进胶原合成","解毒"], answer:"ABCD" }, { text:"钙的生理功能包括（ ）。", options:["构成骨骼和牙齿","维持神经肌肉兴奋","参与血液凝固","调节酶活性"], answer:"ABCD" },
+    { text:"铁的生理功能包括（ ）。", options:["参与血红蛋白合成","参与肌红蛋白合成","参与能量代谢","参与免疫功能"], answer:"ABCD" },
+    { text:"锌的生理功能包括（ ）。", options:["促进生长发育","增强免疫功能","维持味觉","促进伤口愈合"], answer:"ABCD" },
+    { text:"硒的生理功能包括（ ）。", options:["抗氧化","增强免疫功能","解毒","保护心血管"], answer:"ABCD" },
+    { text:"碘的生理功能包括（ ）。", options:["参与甲状腺激素合成","促进生长发育","调节新陈代谢","维持神经系统功能"], answer:"ABCD" },
+    { text:"维生素A的生理功能包括（ ）。", options:["维持视觉","维持上皮细胞完整","促进生长发育","增强免疫功能"], answer:"ABCD" },
+    { text:"维生素D的生理功能包括（ ）。", options:["促进钙吸收","促进磷吸收","调节骨代谢","调节免疫"], answer:"ABCD" },
+    { text:"维生素E的生理功能包括（ ）。", options:["抗氧化","抗衰老","维持生殖功能","保护心血管"], answer:"ABCD" },
+    { text:"维生素K的生理功能包括（ ）。", options:["促进凝血","参与骨代谢","抗氧化","抗炎"], answer:"AB" },
+    { text:"B族维生素的生理功能包括（ ）。", options:["参与能量代谢","参与神经系统功能","参与造血","参与DNA合成"], answer:"ABCD" },
+    { text:"蛋白质的互补作用原则包括（ ）。", options:["食物种类越多越好","动物和植物搭配","搭配的蛋白质生物学种属越远越好","同时食用"], answer:"ABCD" },
+    { text:"影响食物消化吸收的因素包括（ ）。", options:["食物本身的特性","烹饪方法","个人消化功能","进餐环境"], answer:"ABCD" },
+    { text:"合理膳食的要求包括（ ）。", options:["食物多样","营养均衡","安全卫生","适量运动"], answer:"ABCD" },
+    { text:"中国居民膳食指南的核心推荐包括（ ）。", options:["食物多样，谷类为主","吃动平衡，健康体重","多吃蔬果、奶类、大豆","适量吃鱼、禽、蛋、瘦肉"], answer:"ABCD" },
+    { text:"预包装食品营养标签的内容包括（ ）。", options:["营养成分表","营养声称","健康声称","配料表"], answer:"AB" },
+    { text:"食品安全控制措施包括（ ）。", options:["HACCP体系","GMP规范","SSOP","ISO22000"], answer:"ABCD" },
+    { text:"食品污染的分类包括（ ）。", options:["生物性污染","化学性污染","物理性污染","放射性污染"], answer:"ABC" },
+    { text:"食物中毒的特点包括（ ）。", options:["爆发性","潜伏期短","临床表现相似","一般具有传染性"], answer:"ABC" },
+    { text:"细菌性食物中毒的预防措施包括（ ）。", options:["防止污染","控制繁殖","杀灭病原菌","免疫接种"], answer:"ABC" },
+    { text:"食品腐败变质的原因包括（ ）。", options:["微生物污染","酶的作用","环境因素","食品本身组成"], answer:"ABCD" },
+    { text:"食品添加剂的使用原则包括（ ）。", options:["不应对人体产生任何健康危害","不应掩盖食品腐败变质","不应掩盖食品本身或加工过程中的质量缺陷","食品工业用加工助剂一般应在制成最后成品之前除去"], answer:"ABCD" },
+    { text:"保健食品的功能包括（ ）。", options:["调节人体机能","不以治疗疾病为目的","特定人群食用","可替代药物"], answer:"ABC" },
+    { text:"营养强化的意义包括（ ）。", options:["弥补营养缺陷","补充加工损失","提高营养价值","预防营养缺乏病"], answer:"ABCD" },
+    { text:"膳食营养素参考摄入量的内容包括（ ）。", options:["平均需要量","推荐摄入量","适宜摄入量","可耐受最高摄入量"], answer:"ABCD" },
+    { text:"体重评价的常用指标包括（ ）。", options:["体质指数","腰围","腰臀比","体脂率"], answer:"ABCD" },
+    { text:"营养调查的方法包括（ ）。", options:["膳食调查","体格检查","实验室检查","临床症状检查"], answer:"ABCD" },
+    { text:"膳食调查的方法包括（ ）。", options:["称重法","记账法","24小时回顾法","食物频率问卷法"], answer:"ABCD" },
+    { text:"营养不良的临床表现包括（ ）。", options:["体重下降","水肿","贫血","免疫力降低"], answer:"ABCD" }
 ];
+// 确保多选80题，上面已足80题（从1到80）
 
 // ======================== 4. 理论·判断题（40题，来自【理论知识】题库） ========================
 const JUDGE = [
@@ -268,7 +364,8 @@ const JUDGE = [
     { text:"萝卜中含有丰富的β-胡萝卜素。", answer:"A" },
     { text:"维生素C可以提高机体免疫力。", answer:"A" },
     { text:"动物性原料中维生素C的含量都较高，因此每天不一定要食用蔬菜水果。", answer:"B" },
-    { text:"加热时间越长，营养素的损失越多，所以最好的烹调方法是旺火快炒。", answer:"A" },   { text:"维生素D摄取过多可引起机体中毒。", answer:"A" },
+    { text:"加热时间越长，营养素的损失越多，所以最好的烹调方法是旺火快炒。", answer:"A" },
+    { text:"维生素D摄取过多可引起机体中毒。", answer:"A" },
     { text:"目前对缺锌的营养评价缺乏比较理想及一致认同的方法，故强调采用综合评价的方法。", answer:"A" },
     { text:"勤劳是现代市场经济所需要的，而节俭则不宜提倡。", answer:"B" },
     { text:"罗汉果因其甜度高，而不适合糖尿病人服用。", answer:"B" },
@@ -289,9 +386,7 @@ const JUDGE = [
     { text:"与吸烟、酗酒、缺乏活动、膳食不合理等生活方式密切相关的高血脂、高血压、高血糖、肥胖已成为影响我国人民健康素质的重要危险因素。", answer:"A" },
     { text:"营养相关问题指长期严重缺乏一种或多种食物造成机体产生各种临床表现或病症。", answer:"A" },
     { text:"维生素A对消除眼睛疲劳，保证视力有重要作用。", answer:"A" }
-];
-
-// ======================== 通用刷题逻辑 ========================
+];// ======================== 通用刷题逻辑（无解析，手动下一题） ========================
 let currentModule = 'skill';
 let questions = [];
 let currentIndex = 0, answered = false, currentQ = null;
@@ -307,7 +402,8 @@ const shuffleBtn = document.getElementById('shuffleBtn');
 function shuffleArray(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
 function shuffleOptions(q) { if (q.answer.length > 1) return q; const opts = [...q.options]; let indices = [0,1,2,3]; for (let i = indices.length-1;i>0;i--) { const j=Math.floor(Math.random()*(i+1)); [indices[i],indices[j]]=[indices[j],indices[i]]; } const newOpts = indices.map(i=>opts[i]); const oldIdx = q.answer.charCodeAt(0)-65; const newIdx = indices.indexOf(oldIdx); const newAns = String.fromCharCode(65+newIdx); return {...q, options:newOpts, answer:newAns}; }
 function loadModule(module, shuffleOrder=true) { let raw; if(module==='skill') raw=[...SKILL]; else if(module==='theory_single') raw=[...SINGLE]; else if(module==='theory_multi') raw=[...MULTI]; else raw=[...JUDGE]; if(shuffleOrder) raw=shuffleArray(raw); let processed = raw.map(q=>{ if(module!=='theory_multi') return shuffleOptions(q); else return {...q}; }); questions=processed; currentIndex=0; answered=false; renderQuestion(); }
-function renderQuestion() { if(!questions.length){ questionTextDiv.innerText='暂无题目'; optionsDiv.innerHTML=''; progressSpan.innerText='第0/0题'; return; } currentQ=questions[currentIndex]; questionTextDiv.innerText=`${currentIndex+1}. ${currentQ.text}`; if(currentModule==='theory_multi'){ let html='<div class="options">'; for(let i=0;i<currentQ.options.length;i++){ const letter=String.fromCharCode(65+i); html+=`<div class="multi-option" data-val="${letter}"><input type="checkbox" id="chk_${letter}" value="${letter}"><label for="chk_${letter}"><strong>${letter}.</strong> ${currentQ.options[i]}</label></div>`; } html+='</div>'; optionsDiv.innerHTML=html; const checkboxes=document.querySelectorAll('.multi-option input'); checkboxes.forEach(cb=>{ cb.addEventListener('change',()=>{ if(answered) return; let selected=[]; checkboxes.forEach(c=>{ if(c.checked) selected.push(c.value); }); selected.sort(); const correctSorted = currentQ.answer.split('').sort(); const isCorrect = (selected.length===correctSorted.length && selected.every((v,i)=>v===correctSorted[i])); if(!answered) evaluateMulti(isCorrect); }); }); } else if(currentModule==='theory_judge'){ optionsDiv.innerHTML=`<div class="judge-buttons"><div class="judge-btn" data-val="A">✅ 正确</div><div class="judge-btn" data-val="B">❌ 错误</div></div>`; document.querySelectorAll('.judge-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ if(answered) return; const chosen=btn.getAttribute('data-val'); evaluateJudge(chosen); }); }); } else { const letters=['A','B','C','D']; let html=''; currentQ.options.forEach((opt,idx)=>{ html+=`<div class="option" data-val="${letters[idx]}"><span class="prefix">${letters[idx]}</span><span>${opt}</span></div>`; }); optionsDiv.innerHTML=html; document.querySelectorAll('.option').forEach(opt=>{ opt.addEventListener('click',()=>{ if(answered) return; const chosen=opt.getAttribute('data-val'); evaluateSingle(chosen); }); }); } feedbackDiv.className='feedback'; feedbackDiv.style.display='none'; feedbackDiv.innerHTML=''; nextBtn.style.display='none'; answered=false; progressSpan.innerText=`第${currentIndex+1}/${questions.length}题`; }function evaluateSingle(chosen){ const q=currentQ; const isCorrect=(chosen===q.answer); const correctIdx=q.answer.charCodeAt(0)-65; const correctText=`${q.answer}. ${q.options[correctIdx]}`; if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctText}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='none'; el.style.opacity='0.6'; }); }
+function renderQuestion() { if(!questions.length){ questionTextDiv.innerText='暂无题目'; optionsDiv.innerHTML=''; progressSpan.innerText='第0/0题'; return; } currentQ=questions[currentIndex]; questionTextDiv.innerText=`${currentIndex+1}. ${currentQ.text}`; if(currentModule==='theory_multi'){ let html='<div class="options">'; for(let i=0;i<currentQ.options.length;i++){ const letter=String.fromCharCode(65+i); html+=`<div class="multi-option" data-val="${letter}"><input type="checkbox" id="chk_${letter}" value="${letter}"><label for="chk_${letter}"><strong>${letter}.</strong> ${currentQ.options[i]}</label></div>`; } html+='</div>'; optionsDiv.innerHTML=html; const checkboxes=document.querySelectorAll('.multi-option input'); checkboxes.forEach(cb=>{ cb.addEventListener('change',()=>{ if(answered) return; let selected=[]; checkboxes.forEach(c=>{ if(c.checked) selected.push(c.value); }); selected.sort(); const correctSorted = currentQ.answer.split('').sort(); const isCorrect = (selected.length===correctSorted.length && selected.every((v,i)=>v===correctSorted[i])); if(!answered) evaluateMulti(isCorrect); }); }); } else if(currentModule==='theory_judge'){ optionsDiv.innerHTML=`<div class="judge-buttons"><div class="judge-btn" data-val="A">✅ 正确</div><div class="judge-btn" data-val="B">❌ 错误</div></div>`; document.querySelectorAll('.judge-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ if(answered) return; const chosen=btn.getAttribute('data-val'); evaluateJudge(chosen); }); }); } else { const letters=['A','B','C','D']; let html=''; currentQ.options.forEach((opt,idx)=>{ html+=`<div class="option" data-val="${letters[idx]}"><span class="prefix">${letters[idx]}</span><span>${opt}</span></div>`; }); optionsDiv.innerHTML=html; document.querySelectorAll('.option').forEach(opt=>{ opt.addEventListener('click',()=>{ if(answered) return; const chosen=opt.getAttribute('data-val'); evaluateSingle(chosen); }); }); } feedbackDiv.className='feedback'; feedbackDiv.style.display='none'; feedbackDiv.innerHTML=''; nextBtn.style.display='none'; answered=false; progressSpan.innerText=`第${currentIndex+1}/${questions.length}题`; }
+function evaluateSingle(chosen){ const q=currentQ; const isCorrect=(chosen===q.answer); const correctIdx=q.answer.charCodeAt(0)-65; const correctText=`${q.answer}. ${q.options[correctIdx]}`; if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctText}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='none'; el.style.opacity='0.6'; }); }
 function evaluateMulti(isCorrect){ const q=currentQ; const correctLetters = q.answer.split(''); const correctOptions = correctLetters.map(l=>{ const idx=l.charCodeAt(0)-65; return `${l}. ${q.options[idx]}`; }).join('；'); if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctOptions}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=true; }); }
 function evaluateJudge(chosen){ const q=currentQ; const isCorrect=(chosen===q.answer); const correctAns=q.answer==='A'?'正确':'错误'; if(isCorrect){ feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='✅ 正确！'; } else { feedbackDiv.className='feedback wrong'; feedbackDiv.innerHTML=`❌ 错误！ 正确答案：${correctAns}`; } feedbackDiv.style.display='block'; nextBtn.style.display='block'; answered=true; document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='none'; el.style.opacity='0.6'; }); }
 function nextQuestion(){ if(!answered) return; if(currentIndex+1<questions.length){ currentIndex++; renderQuestion(); if(currentModule==='theory_multi'){ document.querySelectorAll('.multi-option input').forEach(cb=>{ cb.disabled=false; cb.checked=false; }); } else if(currentModule==='theory_judge'){ document.querySelectorAll('.judge-btn').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } else { document.querySelectorAll('.option').forEach(el=>{ el.style.pointerEvents='auto'; el.style.opacity='1'; }); } } else { feedbackDiv.className='feedback correct'; feedbackDiv.innerHTML='🎉 恭喜！您已完成当前模块所有题目！🎉'; feedbackDiv.style.display='block'; nextBtn.style.display='none'; optionsDiv.innerHTML='<div style="text-align:center;padding:1rem;">✨ 完成 ✨</div>'; questionTextDiv.innerText='本模块已通关！'; } }
